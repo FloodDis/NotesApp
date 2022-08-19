@@ -20,14 +20,14 @@ namespace NotesAppUI
 
 		private void NotesAppUIForm_Load(object sender, EventArgs e)
 		{
-			CategoryComboBox.Items.Add("All");
-			CategoryComboBox.Items.Add("Work");
-			CategoryComboBox.Items.Add("Home");
-			CategoryComboBox.Items.Add("Health and sport");
-			CategoryComboBox.Items.Add("People");
-			CategoryComboBox.Items.Add("Documents");
-			CategoryComboBox.Items.Add("Finances");
-			CategoryComboBox.Items.Add("Other");
+			CategoryComboBox.Items.Add(Category.All);
+			CategoryComboBox.Items.Add(Category.Documents);
+			CategoryComboBox.Items.Add(Category.Finances);
+			CategoryComboBox.Items.Add(Category.HealthAndSport);
+			CategoryComboBox.Items.Add(Category.Home);
+			CategoryComboBox.Items.Add(Category.People);
+			CategoryComboBox.Items.Add(Category.Work);
+			CategoryComboBox.Items.Add(Category.Other);
 		}
 	}
 }

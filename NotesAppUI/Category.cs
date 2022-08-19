@@ -12,9 +12,14 @@ namespace NotesAppUI
 	enum Category
 	{
 		/// <summary>
+		/// Все категории
+		/// </summary>
+		All = 1,
+
+		/// <summary>
 		/// Работа
 		/// </summary>
-		Work = 1,
+		Work,
 
 		/// <summary>
 		/// Дом
