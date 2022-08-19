@@ -48,6 +48,8 @@
 			this.removeNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -97,7 +99,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(525, 93);
+			this.label3.Location = new System.Drawing.Point(544, 93);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(62, 16);
 			this.label3.TabIndex = 5;
@@ -217,11 +219,29 @@
 			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
 			this.aboutToolStripMenuItem.Text = "About";
 			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.Enabled = false;
+			this.dateTimePicker1.Location = new System.Drawing.Point(379, 88);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(144, 22);
+			this.dateTimePicker1.TabIndex = 12;
+			// 
+			// dateTimePicker2
+			// 
+			this.dateTimePicker2.Enabled = false;
+			this.dateTimePicker2.Location = new System.Drawing.Point(612, 88);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(144, 22);
+			this.dateTimePicker2.TabIndex = 13;
+			// 
 			// NotesAppUIForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 471);
+			this.Controls.Add(this.dateTimePicker2);
+			this.Controls.Add(this.dateTimePicker1);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
@@ -267,6 +287,8 @@
 		private System.Windows.Forms.ToolStripMenuItem editNoteToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem removeNoteToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.DateTimePicker dateTimePicker2;
 	}
 }
 
