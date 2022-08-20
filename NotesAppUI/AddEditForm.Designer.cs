@@ -37,6 +37,8 @@
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.CancelButton = new System.Windows.Forms.Button();
+			this.OKButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -114,11 +116,31 @@
 			this.richTextBox1.TabIndex = 10;
 			this.richTextBox1.Text = "";
 			// 
+			// CancelButton
+			// 
+			this.CancelButton.Location = new System.Drawing.Point(514, 498);
+			this.CancelButton.Name = "CancelButton";
+			this.CancelButton.Size = new System.Drawing.Size(85, 28);
+			this.CancelButton.TabIndex = 11;
+			this.CancelButton.Text = "Cancel";
+			this.CancelButton.UseVisualStyleBackColor = true;
+			// 
+			// OKButton
+			// 
+			this.OKButton.Location = new System.Drawing.Point(423, 498);
+			this.OKButton.Name = "OKButton";
+			this.OKButton.Size = new System.Drawing.Size(85, 28);
+			this.OKButton.TabIndex = 12;
+			this.OKButton.Text = "OK";
+			this.OKButton.UseVisualStyleBackColor = true;
+			// 
 			// AddEditForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(611, 504);
+			this.ClientSize = new System.Drawing.Size(611, 535);
+			this.Controls.Add(this.OKButton);
+			this.Controls.Add(this.CancelButton);
 			this.Controls.Add(this.richTextBox1);
 			this.Controls.Add(this.dateTimePicker2);
 			this.Controls.Add(this.dateTimePicker1);
@@ -146,5 +168,7 @@
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.DateTimePicker dateTimePicker2;
 		private System.Windows.Forms.RichTextBox richTextBox1;
+		private System.Windows.Forms.Button CancelButton;
+		private System.Windows.Forms.Button OKButton;
 	}
 }
