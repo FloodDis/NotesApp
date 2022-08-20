@@ -36,6 +36,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -105,11 +106,20 @@
 			this.dateTimePicker2.Size = new System.Drawing.Size(134, 22);
 			this.dateTimePicker2.TabIndex = 9;
 			// 
+			// richTextBox1
+			// 
+			this.richTextBox1.Location = new System.Drawing.Point(16, 137);
+			this.richTextBox1.Name = "richTextBox1";
+			this.richTextBox1.Size = new System.Drawing.Size(583, 355);
+			this.richTextBox1.TabIndex = 10;
+			this.richTextBox1.Text = "";
+			// 
 			// AddEditForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(611, 504);
+			this.Controls.Add(this.richTextBox1);
 			this.Controls.Add(this.dateTimePicker2);
 			this.Controls.Add(this.dateTimePicker1);
 			this.Controls.Add(this.label4);
@@ -135,5 +145,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.DateTimePicker dateTimePicker2;
+		private System.Windows.Forms.RichTextBox richTextBox1;
 	}
 }
