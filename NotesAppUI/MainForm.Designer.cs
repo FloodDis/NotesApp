@@ -36,9 +36,9 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.AddButton = new System.Windows.Forms.Button();
+			this.EditButton = new System.Windows.Forms.Button();
+			this.RemoveButton = new System.Windows.Forms.Button();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,32 +123,32 @@
 			this.label5.TabIndex = 7;
 			this.label5.Text = "Name of category";
 			// 
-			// button1
+			// AddButton
 			// 
-			this.button1.Location = new System.Drawing.Point(15, 420);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 8;
-			this.button1.Text = "Add Note";
-			this.button1.UseVisualStyleBackColor = true;
+			this.AddButton.Location = new System.Drawing.Point(15, 420);
+			this.AddButton.Name = "AddButton";
+			this.AddButton.Size = new System.Drawing.Size(75, 23);
+			this.AddButton.TabIndex = 8;
+			this.AddButton.Text = "Add Note";
+			this.AddButton.UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// EditButton
 			// 
-			this.button2.Location = new System.Drawing.Point(96, 420);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 9;
-			this.button2.Text = "Edit Note";
-			this.button2.UseVisualStyleBackColor = true;
+			this.EditButton.Location = new System.Drawing.Point(96, 420);
+			this.EditButton.Name = "EditButton";
+			this.EditButton.Size = new System.Drawing.Size(75, 23);
+			this.EditButton.TabIndex = 9;
+			this.EditButton.Text = "Edit Note";
+			this.EditButton.UseVisualStyleBackColor = true;
 			// 
-			// button3
+			// RemoveButton
 			// 
-			this.button3.Location = new System.Drawing.Point(177, 420);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(112, 23);
-			this.button3.TabIndex = 10;
-			this.button3.Text = "Remove Note";
-			this.button3.UseVisualStyleBackColor = true;
+			this.RemoveButton.Location = new System.Drawing.Point(177, 420);
+			this.RemoveButton.Name = "RemoveButton";
+			this.RemoveButton.Size = new System.Drawing.Size(112, 23);
+			this.RemoveButton.TabIndex = 10;
+			this.RemoveButton.Text = "Remove Note";
+			this.RemoveButton.UseVisualStyleBackColor = true;
 			// 
 			// menuStrip1
 			// 
@@ -242,9 +242,9 @@
 			this.ClientSize = new System.Drawing.Size(800, 471);
 			this.Controls.Add(this.dateTimePicker2);
 			this.Controls.Add(this.dateTimePicker1);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.RemoveButton);
+			this.Controls.Add(this.EditButton);
+			this.Controls.Add(this.AddButton);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
@@ -275,9 +275,9 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button AddButton;
+		private System.Windows.Forms.Button EditButton;
+		private System.Windows.Forms.Button RemoveButton;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
