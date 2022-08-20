@@ -151,6 +151,7 @@
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.label1);
 			this.Name = "AddEditForm";
+			this.ShowIcon = false;
 			this.Text = "Add/Edit Note";
 			this.ResumeLayout(false);
 			this.PerformLayout();
