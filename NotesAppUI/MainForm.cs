@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace NotesAppUI
 {
 	public partial class NotesAppUIForm : Form
@@ -28,6 +27,12 @@ namespace NotesAppUI
 			CategoryComboBox.Items.Add(Category.People);
 			CategoryComboBox.Items.Add(Category.Work);
 			CategoryComboBox.Items.Add(Category.Other);
+		}
+
+		private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			AboutForm form = new AboutForm();
+			form.ShowDialog();
 		}
 	}
 }

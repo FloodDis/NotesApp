@@ -40,14 +40,14 @@
 			this.EditButton = new System.Windows.Forms.Button();
 			this.RemoveButton = new System.Windows.Forms.Button();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.editNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.removeNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.AddNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.EditNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.RemoveNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.menuStrip1.SuspendLayout();
@@ -154,70 +154,71 @@
 			// 
 			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.FileToolStripMenuItem,
+            this.EditToolStripMenuItem,
+            this.HelpToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(800, 28);
 			this.menuStrip1.TabIndex = 11;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
-			// fileToolStripMenuItem
+			// FileToolStripMenuItem
 			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-			this.fileToolStripMenuItem.Text = "File";
+			this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ExitToolStripMenuItem});
+			this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+			this.FileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+			this.FileToolStripMenuItem.Text = "File";
 			// 
-			// exitToolStripMenuItem
+			// ExitToolStripMenuItem
 			// 
-			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
-			this.exitToolStripMenuItem.Text = "Exit";
+			this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+			this.ExitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.ExitToolStripMenuItem.Text = "Exit";
 			// 
-			// editToolStripMenuItem
+			// EditToolStripMenuItem
 			// 
-			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNoteToolStripMenuItem,
-            this.editNoteToolStripMenuItem,
-            this.removeNoteToolStripMenuItem});
-			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-			this.editToolStripMenuItem.Text = "Edit";
+			this.EditToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddNoteToolStripMenuItem,
+            this.EditNoteToolStripMenuItem,
+            this.RemoveNoteToolStripMenuItem});
+			this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
+			this.EditToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+			this.EditToolStripMenuItem.Text = "Edit";
 			// 
-			// addNoteToolStripMenuItem
+			// AddNoteToolStripMenuItem
 			// 
-			this.addNoteToolStripMenuItem.Name = "addNoteToolStripMenuItem";
-			this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
-			this.addNoteToolStripMenuItem.Text = "Add Note";
+			this.AddNoteToolStripMenuItem.Name = "AddNoteToolStripMenuItem";
+			this.AddNoteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.AddNoteToolStripMenuItem.Text = "Add Note";
 			// 
-			// editNoteToolStripMenuItem
+			// EditNoteToolStripMenuItem
 			// 
-			this.editNoteToolStripMenuItem.Name = "editNoteToolStripMenuItem";
-			this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
-			this.editNoteToolStripMenuItem.Text = "Edit Note";
+			this.EditNoteToolStripMenuItem.Name = "EditNoteToolStripMenuItem";
+			this.EditNoteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.EditNoteToolStripMenuItem.Text = "Edit Note";
 			// 
-			// removeNoteToolStripMenuItem
+			// RemoveNoteToolStripMenuItem
 			// 
-			this.removeNoteToolStripMenuItem.Name = "removeNoteToolStripMenuItem";
-			this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
-			this.removeNoteToolStripMenuItem.Text = "Remove Note";
+			this.RemoveNoteToolStripMenuItem.Name = "RemoveNoteToolStripMenuItem";
+			this.RemoveNoteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.RemoveNoteToolStripMenuItem.Text = "Remove Note";
 			// 
-			// helpToolStripMenuItem
+			// HelpToolStripMenuItem
 			// 
-			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-			this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-			this.helpToolStripMenuItem.Text = "Help";
+			this.HelpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AboutToolStripMenuItem});
+			this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
+			this.HelpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+			this.HelpToolStripMenuItem.Text = "Help";
 			// 
-			// aboutToolStripMenuItem
+			// AboutToolStripMenuItem
 			// 
-			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
-			this.aboutToolStripMenuItem.Text = "About";
+			this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+			this.AboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.AboutToolStripMenuItem.Text = "About";
+			this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
 			// 
 			// dateTimePicker1
 			// 
@@ -279,14 +280,14 @@
 		private System.Windows.Forms.Button EditButton;
 		private System.Windows.Forms.Button RemoveButton;
 		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem addNoteToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem editNoteToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem removeNoteToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem EditToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem AddNoteToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem EditNoteToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem RemoveNoteToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.DateTimePicker dateTimePicker2;
 	}
