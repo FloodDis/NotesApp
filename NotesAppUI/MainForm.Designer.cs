@@ -127,25 +127,27 @@
 			// 
 			this.AddButton.Location = new System.Drawing.Point(15, 420);
 			this.AddButton.Name = "AddButton";
-			this.AddButton.Size = new System.Drawing.Size(75, 23);
+			this.AddButton.Size = new System.Drawing.Size(85, 28);
 			this.AddButton.TabIndex = 8;
 			this.AddButton.Text = "Add Note";
 			this.AddButton.UseVisualStyleBackColor = true;
+			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
 			// 
 			// EditButton
 			// 
-			this.EditButton.Location = new System.Drawing.Point(96, 420);
+			this.EditButton.Location = new System.Drawing.Point(106, 420);
 			this.EditButton.Name = "EditButton";
-			this.EditButton.Size = new System.Drawing.Size(75, 23);
+			this.EditButton.Size = new System.Drawing.Size(85, 28);
 			this.EditButton.TabIndex = 9;
 			this.EditButton.Text = "Edit Note";
 			this.EditButton.UseVisualStyleBackColor = true;
+			this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
 			// 
 			// RemoveButton
 			// 
-			this.RemoveButton.Location = new System.Drawing.Point(177, 420);
+			this.RemoveButton.Location = new System.Drawing.Point(197, 420);
 			this.RemoveButton.Name = "RemoveButton";
-			this.RemoveButton.Size = new System.Drawing.Size(112, 23);
+			this.RemoveButton.Size = new System.Drawing.Size(112, 28);
 			this.RemoveButton.TabIndex = 10;
 			this.RemoveButton.Text = "Remove Note";
 			this.RemoveButton.UseVisualStyleBackColor = true;
@@ -174,7 +176,7 @@
 			// ExitToolStripMenuItem
 			// 
 			this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-			this.ExitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.ExitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
 			this.ExitToolStripMenuItem.Text = "Exit";
 			// 
 			// EditToolStripMenuItem
@@ -190,19 +192,19 @@
 			// AddNoteToolStripMenuItem
 			// 
 			this.AddNoteToolStripMenuItem.Name = "AddNoteToolStripMenuItem";
-			this.AddNoteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.AddNoteToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
 			this.AddNoteToolStripMenuItem.Text = "Add Note";
 			// 
 			// EditNoteToolStripMenuItem
 			// 
 			this.EditNoteToolStripMenuItem.Name = "EditNoteToolStripMenuItem";
-			this.EditNoteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.EditNoteToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
 			this.EditNoteToolStripMenuItem.Text = "Edit Note";
 			// 
 			// RemoveNoteToolStripMenuItem
 			// 
 			this.RemoveNoteToolStripMenuItem.Name = "RemoveNoteToolStripMenuItem";
-			this.RemoveNoteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.RemoveNoteToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
 			this.RemoveNoteToolStripMenuItem.Text = "Remove Note";
 			// 
 			// HelpToolStripMenuItem
@@ -216,7 +218,7 @@
 			// AboutToolStripMenuItem
 			// 
 			this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-			this.AboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.AboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
 			this.AboutToolStripMenuItem.Text = "About";
 			this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
 			// 

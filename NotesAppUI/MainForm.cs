@@ -12,6 +12,7 @@ namespace NotesAppUI
 {
 	public partial class NotesAppUIForm : Form
 	{
+		private List<Note> _notes = new List<Note>();
 		public NotesAppUIForm()
 		{
 			InitializeComponent();
@@ -33,6 +34,18 @@ namespace NotesAppUI
 		{
 			AboutForm form = new AboutForm();
 			form.ShowDialog();
+		}
+
+		private void AddButton_Click(object sender, EventArgs e)
+		{
+			AddEditForm form = new AddEditForm();
+			form.ShowDialog(this);
+		}
+
+		private void EditButton_Click(object sender, EventArgs e)
+		{
+			AddEditForm form = new AddEditForm();
+			form.ShowDialog(this);
 		}
 	}
 }
