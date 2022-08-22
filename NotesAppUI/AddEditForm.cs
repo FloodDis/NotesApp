@@ -12,6 +12,8 @@ namespace NotesAppUI
 {
 	public partial class AddEditForm : Form
 	{
+		private Note _note;
+	
 		public AddEditForm()
 		{
 			InitializeComponent();
@@ -20,6 +22,11 @@ namespace NotesAppUI
 		private void CancelButton_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void OKButton_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

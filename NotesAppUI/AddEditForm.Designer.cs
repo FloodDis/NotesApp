@@ -134,6 +134,7 @@
 			this.OKButton.TabIndex = 12;
 			this.OKButton.Text = "OK";
 			this.OKButton.UseVisualStyleBackColor = true;
+			this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
 			// 
 			// AddEditForm
 			// 
