@@ -13,20 +13,28 @@ namespace NotesAppUI
 	public partial class AddEditForm : Form
 	{
 		private Note _note;
-	
-		public AddEditForm()
+		public bool _isAddButton;
+		public AddEditForm(bool isAddButton)
 		{
 			InitializeComponent();
+			_isAddButton = isAddButton;
 		}
 
 		private void CancelButton_Click(object sender, EventArgs e)
 		{
-			this.Close();
+			Close();
 		}
 
 		private void OKButton_Click(object sender, EventArgs e)
 		{
-
+			_note = new Note();
+			if(_isAddButton)
+			{
+				
+			}
+			_note.SetCategory((Category)AddCategoryComboBox.SelectedItem);
+			_note.SetName(TitleTextBox.Text);
+			_note.SetCreationTime(DateTime.Now);
 		}
 	}
 }
