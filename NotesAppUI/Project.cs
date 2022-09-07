@@ -9,20 +9,12 @@ namespace NotesAppUI
 	/// <summary>
 	/// Проект
 	/// </summary>
-	internal class Project
+	static internal class Project
 	{
 		/// <summary>
 		/// Список всех заметок, созданных 
 		/// в приложении
 		/// </summary>
-		private List<Note> _notes;
-
-		/// <summary>
-		/// Конструктор класса Project
-		/// </summary>
-		Project()
-		{
-			_notes = new List<Note>();
-		}
+		static public List<Note> _notes;
 	}
 }

@@ -27,7 +27,6 @@ namespace NotesAppUI
 
 		private void OKButton_Click(object sender, EventArgs e)
 		{
-			_note = new Note();
 			if(_isAddButton)
 			{
 				
