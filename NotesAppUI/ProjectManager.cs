@@ -28,14 +28,13 @@ namespace NotesAppUI
 			for(int i=0; i < Project._notes.Count; i++)
 			{
 				File.OpenWrite(_fileName);
-				string text = JsonConvert.SerializeObject(Project._notes[i]
-					+ Environment.NewLine);
-				File.AppendAllText(_fileName, text);
+				string text = JsonConvert.SerializeObject(Project._notes[i]);
+				File.AppendAllText(_fileName, text + Environment.NewLine);
 			}
 		}
 
 		/// <summary>
-		/// Загрузить проект сво всеми заметками из файла
+		/// Загрузить проект со всеми заметками из файла
 		/// </summary>
 		static public void DownloadProject()
 		{
