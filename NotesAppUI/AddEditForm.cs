@@ -12,7 +12,7 @@ namespace NotesAppUI
 {
 	public partial class AddEditForm : Form
 	{
-		private Note _note;
+		private Note _noteToEdit;
 		public bool _isAddButton;
 		public AddEditForm(bool isAddButton)
 		{
@@ -27,13 +27,29 @@ namespace NotesAppUI
 
 		private void OKButton_Click(object sender, EventArgs e)
 		{
-			if(_isAddButton)
+			if (TitleTextBox.Text.Length > 15)
 			{
-				
+				MessageBox.Show("The note title must be less than 15 characters.", "Error occured.");
+				return;
 			}
-			_note.SetCategory((Category)AddCategoryComboBox.SelectedItem);
-			_note.SetName(TitleTextBox.Text);
-			_note.SetCreationTime(DateTime.Now);
+			_noteToEdit.SetCategory((Category)AddCategoryComboBox.SelectedItem);
+			_noteToEdit.SetName(TitleTextBox.Text);
+			_noteToEdit.SetText(NoteTextBox.Text);
+			_noteToEdit.SetModificationTime(DateTime.Now);
+			Project._notes.Add(_noteToEdit);
+			DialogResult = DialogResult.OK;
+			Close();
+		}
+
+		private void AddEditForm_Load(object sender, EventArgs e)
+		{
+			AddCategoryComboBox.Items.Add(Category.Documents);
+			AddCategoryComboBox.Items.Add(Category.Finances);
+			AddCategoryComboBox.Items.Add(Category.HealthAndSport);
+			AddCategoryComboBox.Items.Add(Category.Home);
+			AddCategoryComboBox.Items.Add(Category.People);
+			AddCategoryComboBox.Items.Add(Category.Work);
+			AddCategoryComboBox.Items.Add(Category.Other);
 		}
 	}
 }

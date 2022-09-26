@@ -42,6 +42,10 @@ namespace NotesAppUI
 			_isAddButton = true;
 			AddEditForm form = new AddEditForm(_isAddButton);
 			form.ShowDialog(this);
+			if(richTextBox1.ShowSelectionMargin)
+			{
+
+			}
 		}
 
 		private void EditButton_Click(object sender, EventArgs e)
