@@ -16,37 +16,45 @@ namespace NotesAppUI
 	static internal class ProjectManager
 	{
 		/// <summary>
-		/// Название файла, в котором будут храниться заметки
+		/// Путь по умолчанию для сохранения/загрузки блокнота.
 		/// </summary>
-		static private string _fileName = "NoteApp.notes";
+		private static string _defaultPath = Environment.ExpandEnvironmentVariables(@"%AppData%\NotebookData.txt");
 
 		/// <summary>
-		/// Сохранить проект со всеми заметками в файл
+		/// Заданный пользователем путь для сохранения/загрузки блокнота.
 		/// </summary>
-		static public void SaveProject()
+		private static string _path = _defaultPath;
+
+		/// <summary>
+		/// Задать/получить путь сохранения/загрузки блокнота.
+		/// </summary>
+		public static string Path
 		{
-			for(int i=0; i < Project._notes.Count; i++)
-			{
-				File.OpenWrite(_fileName);
-				string text = JsonConvert.SerializeObject(Project._notes[i]);
-				File.AppendAllText(_fileName, text + Environment.NewLine);
-			}
+			get { return _path; }
+			set { _path = value; }
 		}
 
 		/// <summary>
-		/// Загрузить проект со всеми заметками из файла
+		/// Сохранить список заметок
 		/// </summary>
-		static public void DownloadProject()
+		/// <param name="noteList">Список заметок для сохранения</param>
+		public static void Save(List<Note> noteList)
 		{
-			File.OpenRead(_fileName);
-			int notePosition = 0;
-			foreach (var line in File.ReadLines(_fileName))
+			File.WriteAllText(_path, JsonConvert.SerializeObject(noteList, Formatting.Indented));
+		}
+
+		/// <summary>
+		/// Загрузить список заметок
+		/// </summary>
+		/// <returns>Загруженный список заметок</returns>
+		public static List<Note> Load()
+		{
+			List<Note> notebook = JsonConvert.DeserializeObject<List<Note>>(File.ReadAllText(_path));
+			if (notebook == null)
 			{
-				string noteInformation = line;
-				Project._notes[notePosition]
-					= JsonConvert.DeserializeObject<Note>(noteInformation);
-				notePosition++;
+				return new List<Note>();
 			}
+			return notebook;
 		}
 	}
 }

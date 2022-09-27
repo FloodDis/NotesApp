@@ -12,16 +12,39 @@ namespace NotesAppUI
 {
 	public partial class AddEditForm : Form
 	{
+		/// <summary>
+		/// Текущая редактируемая заметка
+		/// </summary>
 		private Note _noteToEdit;
-		public bool _isAddButton;
-		public AddEditForm(bool isAddButton)
+
+		/// <summary>
+		/// Отредактированная заметка.
+		/// </summary>
+		public Note Note
+		{
+			get { return _noteToEdit; }
+			set
+			{
+				_noteToEdit = value;
+
+				TitleTextBox.Text = _noteToEdit.GetName();
+				NoteRichTextBox.Text = _noteToEdit.GetText();
+				CreationDateTimePicker.Value = _noteToEdit.GetCreationTime();
+				ModificationDateTimePicker.Value = _noteToEdit.GetModificationTime();
+				AddCategoryComboBox.SelectedItem = _noteToEdit.GetCategory();
+			}
+		}
+
+		public AddEditForm()
 		{
 			InitializeComponent();
-			_isAddButton = isAddButton;
+
+			Note = new Note();
 		}
 
 		private void CancelButton_Click(object sender, EventArgs e)
 		{
+			DialogResult = DialogResult.Cancel;
 			Close();
 		}
 
@@ -32,24 +55,27 @@ namespace NotesAppUI
 				MessageBox.Show("The note title must be less than 15 characters.", "Error occured.");
 				return;
 			}
+
 			_noteToEdit.SetCategory((Category)AddCategoryComboBox.SelectedItem);
 			_noteToEdit.SetName(TitleTextBox.Text);
-			_noteToEdit.SetText(NoteTextBox.Text);
+			_noteToEdit.SetText(NoteRichTextBox.Text);
 			_noteToEdit.SetModificationTime(DateTime.Now);
-			Project._notes.Add(_noteToEdit);
+
 			DialogResult = DialogResult.OK;
 			Close();
 		}
 
 		private void AddEditForm_Load(object sender, EventArgs e)
 		{
-			AddCategoryComboBox.Items.Add(Category.Documents);
-			AddCategoryComboBox.Items.Add(Category.Finances);
-			AddCategoryComboBox.Items.Add(Category.HealthAndSport);
-			AddCategoryComboBox.Items.Add(Category.Home);
-			AddCategoryComboBox.Items.Add(Category.People);
-			AddCategoryComboBox.Items.Add(Category.Work);
-			AddCategoryComboBox.Items.Add(Category.Other);
+			foreach (Category noteType in Enum.GetValues(typeof(Category)))
+			{
+				AddCategoryComboBox.Items.Add(noteType);
+			}
+		}
+
+		private void AddCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }

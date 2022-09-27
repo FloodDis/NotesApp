@@ -9,12 +9,12 @@ namespace NotesAppUI
 	/// <summary>
 	/// Перечисление категорий заметок
 	/// </summary>
-	enum Category
+	public enum Category
 	{
 		/// <summary>
-		/// Все категории
+		/// По умолчанию
 		/// </summary>
-		All = 1,
+		Default,
 
 		/// <summary>
 		/// Работа

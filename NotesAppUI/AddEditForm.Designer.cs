@@ -36,7 +36,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.CreationDateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this.ModificationDateTimePicker = new System.Windows.Forms.DateTimePicker();
-			this.NoteTextBox = new System.Windows.Forms.RichTextBox();
+			this.NoteRichTextBox = new System.Windows.Forms.RichTextBox();
 			this.CancelButton = new System.Windows.Forms.Button();
 			this.OKButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
@@ -73,6 +73,7 @@
 			this.AddCategoryComboBox.Name = "AddCategoryComboBox";
 			this.AddCategoryComboBox.Size = new System.Drawing.Size(121, 24);
 			this.AddCategoryComboBox.TabIndex = 3;
+			this.AddCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.AddCategoryComboBox_SelectedIndexChanged);
 			// 
 			// label4
 			// 
@@ -108,13 +109,13 @@
 			this.ModificationDateTimePicker.Size = new System.Drawing.Size(134, 22);
 			this.ModificationDateTimePicker.TabIndex = 9;
 			// 
-			// NoteTextBox
+			// NoteRichTextBox
 			// 
-			this.NoteTextBox.Location = new System.Drawing.Point(16, 137);
-			this.NoteTextBox.Name = "NoteTextBox";
-			this.NoteTextBox.Size = new System.Drawing.Size(583, 355);
-			this.NoteTextBox.TabIndex = 10;
-			this.NoteTextBox.Text = "";
+			this.NoteRichTextBox.Location = new System.Drawing.Point(16, 137);
+			this.NoteRichTextBox.Name = "NoteRichTextBox";
+			this.NoteRichTextBox.Size = new System.Drawing.Size(583, 355);
+			this.NoteRichTextBox.TabIndex = 10;
+			this.NoteRichTextBox.Text = "";
 			// 
 			// CancelButton
 			// 
@@ -143,7 +144,7 @@
 			this.ClientSize = new System.Drawing.Size(611, 535);
 			this.Controls.Add(this.OKButton);
 			this.Controls.Add(this.CancelButton);
-			this.Controls.Add(this.NoteTextBox);
+			this.Controls.Add(this.NoteRichTextBox);
 			this.Controls.Add(this.ModificationDateTimePicker);
 			this.Controls.Add(this.CreationDateTimePicker);
 			this.Controls.Add(this.label4);
@@ -171,7 +172,7 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.DateTimePicker CreationDateTimePicker;
 		private System.Windows.Forms.DateTimePicker ModificationDateTimePicker;
-		private System.Windows.Forms.RichTextBox NoteTextBox;
+		private System.Windows.Forms.RichTextBox NoteRichTextBox;
 		private System.Windows.Forms.Button CancelButton;
 		private System.Windows.Forms.Button OKButton;
 	}
