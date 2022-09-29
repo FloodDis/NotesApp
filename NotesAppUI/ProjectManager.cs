@@ -40,7 +40,7 @@ namespace NotesAppUI
 		/// <param name="noteList">Список заметок для сохранения</param>
 		public static void Save(Project project)
 		{
-			File.WriteAllText(_path, JsonConvert.SerializeObject(project., Formatting.Indented));
+			File.WriteAllText(_path, JsonConvert.SerializeObject(project, Formatting.Indented));
 		}
 
 		/// <summary>
