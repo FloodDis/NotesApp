@@ -9,13 +9,13 @@ namespace NotesApp.UnitTests
 		public void NoteCount_ValueIncreased()
 		{
 			//Arrange
-			var notebook = Project._notes;
+			var notebook = new Project();
 			int expected = 2;
 
 			//Act
-			notebook.Add(new Note());
-			notebook.Add(new Note());
-			int actual = notebook.Count();
+			notebook.AddNote(new Note());
+			notebook.AddNote(new Note());
+			int actual = notebook.GetNoteCount();
 
 			//Assert
 			Assert.That(expected, Is.EqualTo(actual));
@@ -25,14 +25,14 @@ namespace NotesApp.UnitTests
 		public void NoteCount_ValueDecreased()
 		{
 			// Arrange
-			var notebook = Project._notes;
+			var notebook = new Project();
 			int expected = 1;
 
 			// Act
-			notebook.Add(new Note());
-			notebook.Add(new Note());
-			notebook.RemoveAt(1);
-			int actual = notebook.Count();
+			notebook.AddNote(new Note());
+			notebook.AddNote(new Note());
+			notebook.RemoveNote(1);
+			int actual = notebook.GetNoteCount();
 
 			// Assert
 			Assert.That(expected, Is.EqualTo(actual));
@@ -42,12 +42,12 @@ namespace NotesApp.UnitTests
 		public void AddNoteTest()
 		{
 			// Arrange
-			var notebook = Project._notes;
+			var notebook = new Project();
 			var expected = new Note("First note", "aaa", Category.Finances);
 
 			// Act
-			notebook.Add(expected);
-			var actual = notebook[0];
+			notebook.AddNote(expected);
+			var actual = notebook.GetNoteByIndex(0);
 
 			// Assert
 			Assert.That(expected, Is.EqualTo(actual));
@@ -57,28 +57,28 @@ namespace NotesApp.UnitTests
 		public void RemoveNoteTest()
 		{
 			// Arrange
-			var notebook = Project._notes;
+			var notebook = new Project();
 
 			// Act
-			notebook.Add(new Note("Second note", "12ghj", Category.Home));
-			notebook.RemoveAt(0);
+			notebook.AddNote(new Note("Second note", "12ghj", Category.Home));
+			notebook.RemoveNote(0);
 
 			// Assert
-			Assert.Throws<ArgumentOutOfRangeException>(() => { notebook[0].SetName("New title"); });
+			Assert.Throws<ArgumentOutOfRangeException>(() => { notebook.GetNoteByIndex(0).SetName("New title"); });
 		}
 
 		[Test(Description = "Notebook get note property test")]
 		public void GetNoteTest()
 		{
 			// Arrange
-			var notebook = Project._notes;
-			notebook.Add(new Note("First note", "", Category.Default));
-			notebook.Add(new Note("Second note", "", Category.Home));
-			notebook.Add(new Note("Third note", "", Category.Default));
+			var notebook = new Project();
+			notebook.AddNote(new Note("First note", "", Category.Default));
+			notebook.AddNote(new Note("Second note", "", Category.Home));
+			notebook.AddNote(new Note("Third note", "", Category.Default));
 			var expected = new Note("Third note", "", Category.Default);
 
 			// Act
-			var actual = notebook[0];
+			var actual = notebook.GetNoteByIndex(0);
 
 			// Assert
 			Assert.That(expected.GetName(), Is.EqualTo(actual.GetName()));
@@ -90,21 +90,21 @@ namespace NotesApp.UnitTests
 		public void SortNotebookTest()
 		{
 			// Arrange
-			var notebook = Project._notes;
-			notebook.Add(new Note("First note", "", Category.Default));
-			notebook.Add(new Note("Second note", "", Category.Work));
-			notebook.Add(new Note("Third note", "", Category.Default));
-			notebook.Add(new Note("Fourth note", "", Category.Work));
-			notebook.Add(new Note("Fifth note", "", Category.Documents));
-			var expected1 = notebook[1];
-			var expected2 = notebook[3];
+			var notebook = new Project();
+			notebook.AddNote(new Note("First note", "", Category.Default));
+			notebook.AddNote(new Note("Second note", "", Category.Work));
+			notebook.AddNote(new Note("Third note", "", Category.Default));
+			notebook.AddNote(new Note("Fourth note", "", Category.Work));
+			notebook.AddNote(new Note("Fifth note", "", Category.Documents));
+			var expected1 = notebook.GetNoteByIndex(1);
+			var expected2 = notebook.GetNoteByIndex(3);
 
 			// Act
 			var actual = notebook.GetNotesWithCategory(Category.Work);
 
 			// Assert
-			Assert.That(expected1, Is.EqualTo(actual[0]));
-			Assert.That(expected2, Is.EqualTo(actual[1]));
+			Assert.That(expected1, Is.EqualTo(actual.GetNoteByIndex(0)));
+			Assert.That(expected2, Is.EqualTo(actual.GetNoteByIndex(1)));
 		}
 	}
 }
