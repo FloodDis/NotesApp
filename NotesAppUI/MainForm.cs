@@ -19,15 +19,28 @@ namespace NotesAppUI
 		private Note _helpNote = new Note($"It's the title of this help note.",
 			"Create your first note by clicking on the button in the lower left corner or select existed one on the left box.");
 
+		/// <summary>
+		/// Список заметок
+		/// </summary>
+		private Project _notebook;
+
+		/// <summary>
+		/// Список заметок для отображения на экране
+		/// </summary>
+		private Project _displayedNotes;
+
 		public NotesAppUIForm()
 		{
 			InitializeComponent();
+
+			_notebook = new Project();
+			_displayedNotes = _notebook;
 
 			if (File.Exists(ProjectManager.Path))
 			{
 				try
 				{
-					Project._notes = ProjectManager.Load();
+					_notebook = ProjectManager.Load();
 				}
 				catch
 				{

@@ -47,12 +47,12 @@ namespace NotesAppUI
 		/// Загрузить список заметок
 		/// </summary>
 		/// <returns>Загруженный список заметок</returns>
-		public static List<Note> Load()
+		public static Project Load()
 		{
-			List<Note> notebook = JsonConvert.DeserializeObject<List<Note>>(File.ReadAllText(_path));
+			Project notebook = JsonConvert.DeserializeObject<Project>(File.ReadAllText(_path));
 			if (notebook == null)
 			{
-				return new List<Note>();
+				return new Project();
 			}
 			return notebook;
 		}
