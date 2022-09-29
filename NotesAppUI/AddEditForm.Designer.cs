@@ -73,7 +73,6 @@
 			this.AddCategoryComboBox.Name = "AddCategoryComboBox";
 			this.AddCategoryComboBox.Size = new System.Drawing.Size(121, 24);
 			this.AddCategoryComboBox.TabIndex = 3;
-			this.AddCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.AddCategoryComboBox_SelectedIndexChanged);
 			// 
 			// label4
 			// 

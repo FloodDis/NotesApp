@@ -90,7 +90,7 @@ namespace NotesAppUI
 			DialogResult result = noteEditForm.ShowDialog();
 			if (result == DialogResult.OK)
 			{
-				Project._notes.Add(newNote);
+				Project.AddNote(newNote);
 				Project.SortNotes();
 				ShowNote(newNote);
 				UpdateNoteListBox();
@@ -134,9 +134,8 @@ namespace NotesAppUI
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
 			{
-				//Project._displayedNotes[selectedNoteIndex].SetName("Note to delete");
 				Project.SortNotes();
-				Project._notes.RemoveAt(selectedNoteIndex);
+				Project.RemoveNote(selectedNoteIndex);
 				NoteListBox.SelectedIndex = -1;
 				UpdateNoteListBox();
 			}

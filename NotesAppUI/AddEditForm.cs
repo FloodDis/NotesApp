@@ -72,10 +72,5 @@ namespace NotesAppUI
 				AddCategoryComboBox.Items.Add(noteType);
 			}
 		}
-
-		private void AddCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			
-		}
 	}
 }

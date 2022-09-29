@@ -13,7 +13,7 @@ namespace NotesAppUI
 	/// <summary>
 	/// Менеджер проекта
 	/// </summary>
-	static internal class ProjectManager
+	static public class ProjectManager
 	{
 		/// <summary>
 		/// Путь по умолчанию для сохранения/загрузки блокнота.
@@ -38,9 +38,9 @@ namespace NotesAppUI
 		/// Сохранить список заметок
 		/// </summary>
 		/// <param name="noteList">Список заметок для сохранения</param>
-		public static void Save(List<Note> noteList)
+		public static void Save(Project project)
 		{
-			File.WriteAllText(_path, JsonConvert.SerializeObject(noteList, Formatting.Indented));
+			File.WriteAllText(_path, JsonConvert.SerializeObject(project., Formatting.Indented));
 		}
 
 		/// <summary>
