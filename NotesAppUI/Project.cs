@@ -83,19 +83,19 @@ namespace NotesAppUI
 		/// Получить список заметок с заданной категорией
 		/// </summary>
 		/// <param name="noteCategory">Категория заметки</param>
-		List<Note> GetNotesWithCategory(Category noteCategory)
+		public Project GetNotesWithCategory(Category noteCategory)
 		{
 			if (noteCategory == Category.Default)
 			{
-				return _notes;
+				return this;
 			}
 
-			List<Note> result = new List<Note>();
+			Project result = new Project();
 			foreach (Note note in _notes)
 			{
 				if (note.GetCategory() == noteCategory)
 				{
-					result.Add(note);
+					result.AddNote(note);
 				}
 			}
 			return result;

@@ -32,6 +32,7 @@ namespace NotesAppUI
 				CreationDateTimePicker.Value = _noteToEdit.GetCreationTime();
 				ModificationDateTimePicker.Value = _noteToEdit.GetModificationTime();
 				AddCategoryComboBox.SelectedItem = _noteToEdit.GetCategory();
+				AddCategoryComboBox.Text = _noteToEdit.GetCategory().ToString();
 			}
 		}
 

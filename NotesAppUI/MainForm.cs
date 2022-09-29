@@ -82,11 +82,11 @@ namespace NotesAppUI
 		/// </summary>
 		private void UpdateNoteListBox()
 		{
-			Project._displayedNotes = Project.GetNotesWithCategory((Category)CategoryComboBox.SelectedItem);
+			_displayedNotes = _notebook.GetNotesWithCategory((Category)CategoryComboBox.SelectedItem);
 			NoteListBox.Items.Clear();
-			for (int i = 0; i < Project._displayedNotes.Count(); ++i)
+			for (int i = 0; i < _displayedNotes.GetNoteCount(); ++i)
 			{
-				NoteListBox.Items.Add(Project._displayedNotes[i].GetName());
+				NoteListBox.Items.Add(_displayedNotes.GetNoteByIndex(i).GetName());
 			}
 		}
 
@@ -103,8 +103,8 @@ namespace NotesAppUI
 			DialogResult result = noteEditForm.ShowDialog();
 			if (result == DialogResult.OK)
 			{
-				Project.AddNote(newNote);
-				Project.SortNotes();
+				_notebook.AddNote(newNote);
+				_notebook.SortNotes();
 				ShowNote(newNote);
 				UpdateNoteListBox();
 			}
@@ -120,13 +120,13 @@ namespace NotesAppUI
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
 			{
-				Note selectedNote = Project._displayedNotes[selectedNoteIndex];
+				Note selectedNote = _displayedNotes.GetNoteByIndex(selectedNoteIndex);
 				AddEditForm noteEditForm = new AddEditForm();
 				noteEditForm.Note = selectedNote;
 				DialogResult result = noteEditForm.ShowDialog();
 				if (result == DialogResult.OK)
 				{
-					ProjectManager.Save(Project._notes);
+					ProjectManager.Save(_notebook);
 					ShowNote(selectedNote);
 					UpdateNoteListBox();
 				}
@@ -147,8 +147,8 @@ namespace NotesAppUI
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
 			{
-				Project.SortNotes();
-				Project.RemoveNote(selectedNoteIndex);
+				_notebook.SortNotes();
+				_notebook.RemoveNote(selectedNoteIndex);
 				NoteListBox.SelectedIndex = -1;
 				UpdateNoteListBox();
 			}
@@ -172,7 +172,7 @@ namespace NotesAppUI
 		{
 			if (NoteListBox.SelectedIndex != -1)
 			{
-				Note selectedNote = Project._displayedNotes[NoteListBox.SelectedIndex];
+				Note selectedNote = _displayedNotes.GetNoteByIndex(NoteListBox.SelectedIndex);
 				ShowNote(selectedNote);
 			}
 			else
@@ -187,7 +187,7 @@ namespace NotesAppUI
 
 		private void NotesAppUIForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			ProjectManager.Save(Project._notes);
+			ProjectManager.Save(_notebook);
 		}
 
 		private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
