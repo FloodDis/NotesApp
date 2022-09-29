@@ -9,11 +9,11 @@ namespace NotesApp.UnitTests
 		public void SaveLoadNotebookTest()
 		{
 			//Arrange
-			var expected = new List<Note>();
+			var expected = new Project();
 
 			//Act
-			expected.Add(new Note("First note", "aaa", Category.Documents));
-			expected.Add(new Note("Second note", "12lkjlk", Category.Finances));
+			expected.AddNote(new Note("First note", "aaa", Category.Documents));
+			expected.AddNote(new Note("Second note", "12lkjlk", Category.Finances));
 			ProjectManager.Path = @"bin\Tests\NotebookData.txt";
 			ProjectManager.Save(expected);
 			var actual = ProjectManager.Load();
