@@ -55,7 +55,6 @@ namespace NotesApp.UnitTests
 		[Test(Description = "Note title getter/setter test")]
 		public void Title_CorrectValue()
 		{
-			// TODO: + оформить все юнит-тесты в виде трёх блоков как сделано ниже: Подготовка данных Arrange, вызов тестируемой функциональности Act, и проверка правильности результата Assert
 			// Arrange
 			var note = new Note();
 			var expected = "First Note";
