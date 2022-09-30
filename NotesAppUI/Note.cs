@@ -72,6 +72,7 @@ namespace NotesAppUI
 			{
 				_name = name;
 			}
+			_modificationTime = DateTime.Now;
 		}
 
 		/// <summary>
@@ -81,6 +82,7 @@ namespace NotesAppUI
 		public void SetCategory(Category category)
 		{
 			_category = category;
+			_modificationTime = DateTime.Now;
 		}
 
 		/// <summary>
@@ -90,6 +92,7 @@ namespace NotesAppUI
 		public void SetText(string text)
 		{
 			_text = text;
+			_modificationTime = DateTime.Now;
 		}
 
 		/// <summary>
@@ -156,11 +159,11 @@ namespace NotesAppUI
 		}
 
 		/// <summary>
-		/// Создание заметки по заданному заголовку, содержимому и её категории.
+		/// Создание заметки по заданному заголовку, содержимому и её категории
 		/// </summary>
-		/// <param name="title">Заголовок заметки.</param>
-		/// <param name="text">Содержимое заметки.</param>
-		/// <param name="noteCategory">Категория заметки.</param>
+		/// <param name="title">Заголовок заметки</param>
+		/// <param name="text">Содержимое заметки</param>
+		/// <param name="noteCategory">Категория заметки</param>
 		public Note(string title = _defaultNoteTitle, string text = _defaultNoteText, Category noteCategory = _defaultNoteCategory)
 		{
 			_name = title;

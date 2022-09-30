@@ -14,7 +14,7 @@ namespace NotesApp.UnitTests
 			//Act
 			expected.AddNote(new Note("First note", "aaa", Category.Documents));
 			expected.AddNote(new Note("Second note", "12lkjlk", Category.Finances));
-			ProjectManager.Path = @"bin\Tests\NotebookData.txt";
+			ProjectManager.Path = @"NotebookData.txt";
 			ProjectManager.Save(expected);
 			var actual = ProjectManager.Load();
 
