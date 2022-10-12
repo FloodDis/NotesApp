@@ -138,7 +138,7 @@ namespace NotesAppUI
 		}
 
 		/// <summary>
-		/// Удаленить заметки
+		/// Удалить заметку
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
