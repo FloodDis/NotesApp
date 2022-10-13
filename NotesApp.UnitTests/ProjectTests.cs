@@ -53,20 +53,6 @@ namespace NotesApp.UnitTests
 			Assert.That(expected, Is.EqualTo(actual));
 		}
 
-		[Test(Description = "Removing note from notebook test")]
-		public void RemoveNoteTest()
-		{
-			// Arrange
-			var notebook = new Project();
-
-			// Act
-			notebook.AddNote(new Note("Second note", "12ghj", Category.Home));
-			notebook.RemoveNote(0);
-
-			// Assert
-			Assert.Throws<ArgumentOutOfRangeException>(() => { notebook.GetNoteByIndex(0).SetName("New title"); });
-		}
-
 		[Test(Description = "Notebook get note property test")]
 		public void GetNoteTest()
 		{
