@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NotesAppClasses;
 
-namespace NotesAppUI
+namespace NotesAppUIFixed
 {
 	public partial class NotesAppUIForm : Form
 	{
@@ -99,7 +100,7 @@ namespace NotesAppUI
 		{
 			Note newNote = new Note();
 			AddEditForm noteEditForm = new AddEditForm();
-			noteEditForm.Note = newNote;
+			noteEditForm.SetNote(newNote);
 			DialogResult result = noteEditForm.ShowDialog();
 			if (result == DialogResult.OK)
 			{
@@ -122,7 +123,7 @@ namespace NotesAppUI
 			{
 				Note selectedNote = _displayedNotes.GetNoteByIndex(selectedNoteIndex);
 				AddEditForm noteEditForm = new AddEditForm();
-				noteEditForm.Note = selectedNote;
+				noteEditForm.SetNote(selectedNote);
 				DialogResult result = noteEditForm.ShowDialog();
 				if (result == DialogResult.OK)
 				{

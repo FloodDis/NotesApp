@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NotesAppClasses;
 
-namespace NotesAppUI
+namespace NotesAppUIFixed
 {
 	public partial class AddEditForm : Form
 	{
@@ -17,30 +18,20 @@ namespace NotesAppUI
 		/// </summary>
 		private Note _noteToEdit;
 
-		/// <summary>
-		/// Отредактированная заметка.
-		/// </summary>
-		public Note Note
+		public void SetNote(Note note)
 		{
-			get { return _noteToEdit; }
-			set
-			{
-				_noteToEdit = value;
-
-				TitleTextBox.Text = _noteToEdit.GetName();
-				NoteRichTextBox.Text = _noteToEdit.GetText();
-				CreationDateTimePicker.Value = _noteToEdit.GetCreationTime();
-				ModificationDateTimePicker.Value = _noteToEdit.GetModificationTime();
-				AddCategoryComboBox.SelectedItem = _noteToEdit.GetCategory();
-				AddCategoryComboBox.Text = _noteToEdit.GetCategory().ToString();
-			}
+			TitleTextBox.Text = _noteToEdit.GetName();
+			NoteRichTextBox.Text = _noteToEdit.GetText();
+			CreationDateTimePicker.Value = _noteToEdit.GetCreationTime();
+			ModificationDateTimePicker.Value = _noteToEdit.GetModificationTime();
+			AddCategoryComboBox.SelectedItem = _noteToEdit.GetCategory();
+			AddCategoryComboBox.Text = _noteToEdit.GetCategory().ToString();
 		}
-
 		public AddEditForm()
 		{
 			InitializeComponent();
 
-			Note = new Note();
+			_noteToEdit = new Note();
 		}
 
 		private void CancelButton_Click(object sender, EventArgs e)

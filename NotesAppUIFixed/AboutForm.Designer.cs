@@ -1,4 +1,4 @@
-﻿namespace NotesAppUI
+﻿namespace NotesAppUIFixed
 {
 	partial class AboutForm
 	{

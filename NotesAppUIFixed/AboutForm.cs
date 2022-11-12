@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NotesAppUI
+namespace NotesAppUIFixed
 {
 	public partial class AboutForm : Form
 	{
