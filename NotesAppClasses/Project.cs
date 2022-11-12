@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NotesAppUI
+namespace NotesAppClasses
 {
 	/// <summary>
 	/// Проект
