@@ -18,7 +18,6 @@ namespace NotesAppClasses
 		/// Список всех заметок, созданных 
 		/// в приложении
 		/// </summary>
-		[JsonProperty]
 		private List<Note> _notes;
 
 		/// <summary>
