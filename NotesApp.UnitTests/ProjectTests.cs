@@ -1,4 +1,4 @@
-﻿using NotesAppUI;
+﻿using NotesAppClasses;
 
 namespace NotesApp.UnitTests
 {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NotesAppClasses;
 
-namespace NotesAppUIFixed
+namespace NotesAppUI
 {
 	public partial class AddEditForm : Form
 	{

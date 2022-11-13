@@ -1,4 +1,4 @@
-﻿namespace NotesAppUIFixed
+﻿namespace NotesAppUI
 {
 	partial class AddEditForm
 	{
