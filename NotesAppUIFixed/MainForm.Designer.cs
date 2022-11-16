@@ -112,18 +112,18 @@
 			// 
 			// AddButton
 			// 
-			this.AddButton.Location = new System.Drawing.Point(15, 525);
+			this.AddButton.Image = global::NotesAppUI.Properties.Resources.AddNoteImage1;
+			this.AddButton.Location = new System.Drawing.Point(12, 537);
 			this.AddButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.AddButton.Name = "AddButton";
-			this.AddButton.Size = new System.Drawing.Size(85, 35);
+			this.AddButton.Size = new System.Drawing.Size(36, 35);
 			this.AddButton.TabIndex = 8;
-			this.AddButton.Text = "Add Note";
 			this.AddButton.UseVisualStyleBackColor = true;
 			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
 			// 
 			// EditButton
 			// 
-			this.EditButton.Location = new System.Drawing.Point(106, 525);
+			this.EditButton.Location = new System.Drawing.Point(54, 537);
 			this.EditButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.EditButton.Name = "EditButton";
 			this.EditButton.Size = new System.Drawing.Size(85, 35);
@@ -134,7 +134,7 @@
 			// 
 			// RemoveButton
 			// 
-			this.RemoveButton.Location = new System.Drawing.Point(197, 525);
+			this.RemoveButton.Location = new System.Drawing.Point(145, 537);
 			this.RemoveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.RemoveButton.Name = "RemoveButton";
 			this.RemoveButton.Size = new System.Drawing.Size(112, 35);
