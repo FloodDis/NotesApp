@@ -123,23 +123,23 @@
 			// 
 			// EditButton
 			// 
+			this.EditButton.Image = global::NotesAppUI.Properties.Resources.EditNoteImage;
 			this.EditButton.Location = new System.Drawing.Point(54, 537);
 			this.EditButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.EditButton.Name = "EditButton";
-			this.EditButton.Size = new System.Drawing.Size(85, 35);
+			this.EditButton.Size = new System.Drawing.Size(37, 35);
 			this.EditButton.TabIndex = 9;
-			this.EditButton.Text = "Edit Note";
 			this.EditButton.UseVisualStyleBackColor = true;
 			this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
 			// 
 			// RemoveButton
 			// 
-			this.RemoveButton.Location = new System.Drawing.Point(145, 537);
+			this.RemoveButton.Image = global::NotesAppUI.Properties.Resources.RemoveNoteImage;
+			this.RemoveButton.Location = new System.Drawing.Point(97, 537);
 			this.RemoveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.RemoveButton.Name = "RemoveButton";
-			this.RemoveButton.Size = new System.Drawing.Size(112, 35);
+			this.RemoveButton.Size = new System.Drawing.Size(36, 35);
 			this.RemoveButton.TabIndex = 10;
-			this.RemoveButton.Text = "Remove Note";
 			this.RemoveButton.UseVisualStyleBackColor = true;
 			this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
 			// 

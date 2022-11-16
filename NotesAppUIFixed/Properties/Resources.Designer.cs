@@ -63,6 +63,16 @@ namespace NotesAppUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _111_1119060_document_edit_notes_modify_records_note_pen_pencil_notes_icon {
+            get {
+                object obj = ResourceManager.GetObject("111-1119060_document-edit-notes-modify-records-note-pen-pencil-notes-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddNoteImage {
             get {
                 object obj = ResourceManager.GetObject("AddNoteImage", resourceCulture);
@@ -76,6 +86,26 @@ namespace NotesAppUI.Properties {
         internal static System.Drawing.Bitmap AddNoteImage1 {
             get {
                 object obj = ResourceManager.GetObject("AddNoteImage1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditNoteImage {
+            get {
+                object obj = ResourceManager.GetObject("EditNoteImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemoveNoteImage {
+            get {
+                object obj = ResourceManager.GetObject("RemoveNoteImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
