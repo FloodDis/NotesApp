@@ -18,29 +18,52 @@ namespace NotesAppClasses
 		/// <summary>
 		/// Путь по умолчанию для сохранения/загрузки блокнота.
 		/// </summary>
-		private static string _defaultPath = Environment.ExpandEnvironmentVariables(@"%AppData%\NotebookData.txt");
+		private static string _defaultPath = @".\NotebookData.txt";
 
 		/// <summary>
 		/// Заданный пользователем путь для сохранения/загрузки блокнота.
 		/// </summary>
 		private static string _path = _defaultPath;
 
-		/// <summary>
+		/*/// <summary>
 		/// Задать/получить путь сохранения/загрузки блокнота.
 		/// </summary>
 		public static string Path
 		{
 			get { return _path; }
 			set { _path = value; }
+		}*/
+
+		/// <summary>
+		/// Сеттер поля _path
+		/// </summary>
+		/// <param name="path">Путь файла, который нужно ввести</param>
+		public static void SetPath(string path)
+		{
+			_path = path;
+		}
+
+		/// <summary>
+		/// Геттер поля _path
+		/// </summary>
+		/// <returns>Путь файла, в котором сохраняются заметки</returns>
+		public static string GetPath()
+		{
+			return _path;
 		}
 
 		/// <summary>
 		/// Сохранить список заметок
 		/// </summary>
-		/// <param name="noteList">Список заметок для сохранения</param>
+		/// <param name="project">Список заметок для сохранения</param>
 		public static void Save(Project project)
 		{
-			File.WriteAllText(_path, JsonConvert.SerializeObject(project, Formatting.Indented));
+			JsonSerializer serializer = new JsonSerializer();
+			using (StreamWriter sw = new StreamWriter(_path))
+			using (JsonWriter writer = new JsonTextWriter(sw))
+			{
+				serializer.Serialize(writer, project);
+			}
 		}
 
 		/// <summary>
@@ -49,7 +72,14 @@ namespace NotesAppClasses
 		/// <returns>Загруженный список заметок</returns>
 		public static Project Load()
 		{
-			Project notebook = JsonConvert.DeserializeObject<Project>(File.ReadAllText(_path));
+			Project notebook = null/*JsonConvert.DeserializeObject<Project>(File.ReadAllText(_path))*/;
+			JsonSerializer serializer = new JsonSerializer();
+			using (StreamReader sr = new StreamReader(_path))
+			using (JsonReader reader = new JsonTextReader(sr))
+			{
+				notebook = (Project)serializer.Deserialize<Project>(reader);
+			}
+
 			if (notebook == null)
 			{
 				return new Project();

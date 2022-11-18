@@ -15,12 +15,6 @@ namespace NotesAppUI
 	public partial class NotesAppUIForm : Form
 	{
 		/// <summary>
-		/// Справочная заметка.
-		/// </summary>
-		private Note _helpNote = new Note($"It's the title of this help note.",
-			"Create your first note by clicking on the button in the lower left corner or select existed one on the left box.");
-
-		/// <summary>
 		/// Список заметок
 		/// </summary>
 		private Project _notebook;
@@ -37,7 +31,7 @@ namespace NotesAppUI
 			_notebook = new Project();
 			_displayedNotes = _notebook;
 
-			if (File.Exists(ProjectManager.Path))
+			if (File.Exists(ProjectManager.GetPath()))
 			{
 				try
 				{
@@ -45,7 +39,10 @@ namespace NotesAppUI
 				}
 				catch
 				{
-					MessageBox.Show(string.Format("Failed to load notebook from {0}, check whatever file exist or maybe corrupted.", ProjectManager.Path), "Error occured.");
+					MessageBox.Show(string.Format("Failed to load notebook from {0}, " 
+						+"check whatever file exist or maybe corrupted.", 
+						ProjectManager.GetPath()), 
+						"Error occured.");
 				}
 			}
 		}
@@ -112,7 +109,7 @@ namespace NotesAppUI
 		}
 
 		/// <summary>
-		/// Редактировать заметки
+		/// Отредактировать заметку
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>

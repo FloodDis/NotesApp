@@ -20,6 +20,7 @@ namespace NotesAppUI
 
 		public void SetNote(Note note)
 		{
+			_noteToEdit = note;
 			TitleTextBox.Text = _noteToEdit.GetName();
 			NoteRichTextBox.Text = _noteToEdit.GetText();
 			CreationDateTimePicker.Value = _noteToEdit.GetCreationTime();
