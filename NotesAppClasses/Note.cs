@@ -11,6 +11,7 @@ namespace NotesAppClasses
 	/// <summary>
 	/// Заметка
 	/// </summary>
+	[Serializable]
 	public class Note
 	{
 		/// <summary>
@@ -31,26 +32,31 @@ namespace NotesAppClasses
 		/// <summary>
 		/// Название заметки
 		/// </summary>
+		[JsonProperty]		
 		private string _name;
 
 		/// <summary>
 		/// Категория заметки
 		/// </summary>
+		[JsonProperty]
 		private Category _category;
 
 		/// <summary>
 		/// Текст заметки
 		/// </summary>
+		[JsonProperty]
 		private string _text;
 
 		/// <summary>
 		/// Время создания заметки
 		/// </summary>
+		[JsonProperty]
 		private DateTime _creationTime = DateTime.Now;
 
 		/// <summary>
 		/// Время изменения заметки
 		/// </summary>
+		[JsonProperty]
 		private DateTime _modificationTime = DateTime.Now;
 
 		/// <summary>

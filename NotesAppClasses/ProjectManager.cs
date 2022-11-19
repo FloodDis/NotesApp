@@ -25,15 +25,6 @@ namespace NotesAppClasses
 		/// </summary>
 		private static string _path = _defaultPath;
 
-		/*/// <summary>
-		/// Задать/получить путь сохранения/загрузки блокнота.
-		/// </summary>
-		public static string Path
-		{
-			get { return _path; }
-			set { _path = value; }
-		}*/
-
 		/// <summary>
 		/// Сеттер поля _path
 		/// </summary>
@@ -59,6 +50,10 @@ namespace NotesAppClasses
 		public static void Save(Project project)
 		{
 			JsonSerializer serializer = new JsonSerializer();
+			if(!File.Exists(_path))
+			{
+				File.Create(_path);
+			}
 			using (StreamWriter sw = new StreamWriter(_path))
 			using (JsonWriter writer = new JsonTextWriter(sw))
 			{
@@ -72,7 +67,7 @@ namespace NotesAppClasses
 		/// <returns>Загруженный список заметок</returns>
 		public static Project Load()
 		{
-			Project notebook = null/*JsonConvert.DeserializeObject<Project>(File.ReadAllText(_path))*/;
+			Project notebook = new Project();/*JsonConvert.DeserializeObject<Project>(File.ReadAllText(_path));*/
 			JsonSerializer serializer = new JsonSerializer();
 			using (StreamReader sr = new StreamReader(_path))
 			using (JsonReader reader = new JsonTextReader(sr))

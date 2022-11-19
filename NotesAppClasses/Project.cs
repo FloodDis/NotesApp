@@ -12,12 +12,14 @@ namespace NotesAppClasses
 	/// <summary>
 	/// Проект
 	/// </summary>
+	[Serializable]
 	public class Project
 	{
 		/// <summary>
 		/// Список всех заметок, созданных 
 		/// в приложении
 		/// </summary>
+		[JsonProperty]
 		private List<Note> _notes;
 
 		/// <summary>
