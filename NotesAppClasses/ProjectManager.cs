@@ -67,7 +67,7 @@ namespace NotesAppClasses
 		/// <returns>Загруженный список заметок</returns>
 		public static Project Load()
 		{
-			Project notebook = new Project();/*JsonConvert.DeserializeObject<Project>(File.ReadAllText(_path));*/
+			Project notebook = new Project();
 			JsonSerializer serializer = new JsonSerializer();
 			using (StreamReader sr = new StreamReader(_path))
 			using (JsonReader reader = new JsonTextReader(sr))
