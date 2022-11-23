@@ -66,7 +66,7 @@ namespace NotesAppUI
 		private void ShowNote(Note noteToShow)
 		{
 			NoteTitleLabel.Text = noteToShow.GetName();
-			CategoryLabel.Text = string.Format("Category: {0}", noteToShow.GetCategory());
+			CategoryLabel.Text = "Category: " + noteToShow.GetCategory().ToString();
 			NoteTextRichTextBox.Text = noteToShow.GetText();
 			CreationTimePicker.Value = noteToShow.GetCreationTime();
 			ModificationTimePicker.Value = noteToShow.GetModificationTime();
