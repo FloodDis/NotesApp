@@ -46,10 +46,14 @@ namespace NotesAppUI
 
 		private void NotesAppUIForm_Load(object sender, EventArgs e)
 		{
-			foreach (Category noteType in Enum.GetValues(typeof(Category)))
-			{
-				CategoryComboBox.Items.Add(noteType);
-			}
+			CategoryComboBox.Items.Add(Category.Default);
+			CategoryComboBox.Items.Add(Category.Documents);
+			CategoryComboBox.Items.Add(Category.Finances);
+			CategoryComboBox.Items.Add(Category.HealthAndSport);
+			CategoryComboBox.Items.Add(Category.Home);
+			CategoryComboBox.Items.Add(Category.Other);
+			CategoryComboBox.Items.Add(Category.People);
+			CategoryComboBox.Items.Add(Category.Work);
 			CategoryComboBox.SelectedItem = Category.Default;
 		}
 
@@ -73,7 +77,7 @@ namespace NotesAppUI
 		}
 
 		/// <summary>
-		/// Обновить содержимое списка заметок.
+		/// Обновить содержимое списка заметок
 		/// </summary>
 		private void UpdateNoteListBox()
 		{
@@ -86,7 +90,7 @@ namespace NotesAppUI
 		}
 
 		/// <summary>
-		/// Создать новую заметку
+		/// Добавить новую заметку
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -145,7 +149,7 @@ namespace NotesAppUI
 			{
 				_notesList.SortNotesByDate();
 				_notesList.RemoveNote(selectedNoteIndex);
-				NoteListBox.SelectedIndex = -1;
+				NoteListBox.SelectedIndex = 0;
 				UpdateNoteListBox();
 			}
 			catch
@@ -165,7 +169,7 @@ namespace NotesAppUI
 		}
 
 		private void NoteListBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
+		{	
 			if (NoteListBox.SelectedIndex != -1)
 			{
 				Note selectedNote = _displayedNotes.GetNoteByIndex(NoteListBox.SelectedIndex);
