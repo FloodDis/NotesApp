@@ -11,6 +11,10 @@ namespace NotesApp.UnitTests
 	[TestFixture]
 	public class ProjectManagerTest
 	{
-		[Test]
+		[Test(Description="Тест сеттера и геттера _path")]
+		public void TestPathSetGet()
+		{
+			var expected=@".\"
+		}
 	}
 }

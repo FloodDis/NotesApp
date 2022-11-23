@@ -16,12 +16,12 @@ namespace NotesAppClasses
 	static public class ProjectManager
 	{
 		/// <summary>
-		/// Путь по умолчанию для сохранения/загрузки блокнота.
+		/// Путь по умолчанию для сохранения и загрузки
 		/// </summary>
-		private static string _defaultPath = @".\NotebookData.txt";
+		private static string _defaultPath = @".\Notes.txt";
 
 		/// <summary>
-		/// Заданный пользователем путь для сохранения/загрузки блокнота.
+		/// Заданный пользователем путь для сохранения и загрузки
 		/// </summary>
 		private static string _path = _defaultPath;
 
@@ -50,14 +50,24 @@ namespace NotesAppClasses
 		public static void Save(Project project)
 		{
 			JsonSerializer serializer = new JsonSerializer();
-			if(!File.Exists(_path))
+			if (!File.Exists(_path))
 			{
-				File.Create(_path);
+				using (File.Create(_path)) 
+				{
+					using (StreamWriter sw = new StreamWriter(_path))
+					using (JsonWriter writer = new JsonTextWriter(sw))
+					{
+						serializer.Serialize(writer, project);
+					}
+				} ;
 			}
-			using (StreamWriter sw = new StreamWriter(_path))
-			using (JsonWriter writer = new JsonTextWriter(sw))
+			else
 			{
-				serializer.Serialize(writer, project);
+				using (StreamWriter sw = new StreamWriter(_path))
+				using (JsonWriter writer = new JsonTextWriter(sw))
+				{
+					serializer.Serialize(writer, project);
+				}
 			}
 		}
 
@@ -72,7 +82,7 @@ namespace NotesAppClasses
 			using (StreamReader sr = new StreamReader(_path))
 			using (JsonReader reader = new JsonTextReader(sr))
 			{
-				notebook = (Project)serializer.Deserialize<Project>(reader);
+				notebook = serializer.Deserialize<Project>(reader);
 			}
 
 			if (notebook == null)
