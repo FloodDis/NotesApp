@@ -112,6 +112,7 @@
 			// 
 			// AddButton
 			// 
+			this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.AddButton.Image = global::NotesAppUI.Properties.Resources.AddNoteImage1;
 			this.AddButton.Location = new System.Drawing.Point(12, 532);
 			this.AddButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -123,6 +124,7 @@
 			// 
 			// EditButton
 			// 
+			this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.EditButton.Image = global::NotesAppUI.Properties.Resources.EditNoteImage;
 			this.EditButton.Location = new System.Drawing.Point(62, 532);
 			this.EditButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -134,6 +136,7 @@
 			// 
 			// RemoveButton
 			// 
+			this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.RemoveButton.Image = global::NotesAppUI.Properties.Resources.RemoveNoteImage;
 			this.RemoveButton.Location = new System.Drawing.Point(116, 532);
 			this.RemoveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
