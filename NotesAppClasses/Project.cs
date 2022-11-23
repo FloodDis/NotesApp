@@ -49,7 +49,7 @@ namespace NotesAppClasses
 		public void SetNoteByIndex(int index, Note note)
 		{
 			_notes[index] = note;
-			SortNotes();
+			SortNotesByDate();
 		}
 
 		/// <summary>
@@ -59,7 +59,7 @@ namespace NotesAppClasses
 		public void RemoveNote(int index)
 		{
 			_notes.RemoveAt(index);
-			SortNotes();
+			SortNotesByDate();
 		}
 
 		/// <summary>
@@ -69,15 +69,28 @@ namespace NotesAppClasses
 		public void AddNote(Note note)
 		{
 			_notes.Add(note);
-			SortNotes();
+			SortNotesByDate();
 		}
 
 		/// <summary>
 		/// Отсортировать заметки по времени их последнего редактирования
 		/// </summary>
-		public void SortNotes()
+		public void SortNotesByDate()
 		{
-			_notes.Sort((t1, t2) => DateTime.Compare(t2.GetCreationTime(), t1.GetModificationTime()));
+			/*_notes.Sort((t1, t2) => DateTime.Compare(t2.GetCreationTime(), t1.GetModificationTime()));*/
+			for (int i = 0; i < GetNoteCount(); i++)
+			{
+				for (int j = i; j > 0; j--)
+				{
+					if (_notes[j].GetModificationTime()
+					> _notes[j - 1].GetModificationTime())
+					{
+						Note buffer = _notes[j - 1];
+						_notes[j - 1] = _notes[j];
+						_notes[j] = buffer;
+					}
+				}
+			}
 		}
 
 		/// <summary>

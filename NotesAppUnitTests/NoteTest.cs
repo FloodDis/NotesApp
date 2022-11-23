@@ -1,6 +1,6 @@
 using NUnit.Framework;
 using NotesAppClasses;
-namespace NotesAppUnitTests
+namespace NotesApp.UnitTests
 {
 	[TestFixture]
 	public class NoteTest

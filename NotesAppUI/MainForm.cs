@@ -99,7 +99,7 @@ namespace NotesAppUI
 			if (result == DialogResult.OK)
 			{
 				_notesList.AddNote(newNote);
-				_notesList.SortNotes();
+				_notesList.SortNotesByDate();
 				ShowNote(newNote);
 				UpdateNoteListBox();
 			}
@@ -123,6 +123,7 @@ namespace NotesAppUI
 				{
 					ProjectManager.Save(_notesList);
 					ShowNote(selectedNote);
+					_notesList.SortNotesByDate();
 					UpdateNoteListBox();
 				}
 			}
@@ -142,7 +143,7 @@ namespace NotesAppUI
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
 			{
-				_notesList.SortNotes();
+				_notesList.SortNotesByDate();
 				_notesList.RemoveNote(selectedNoteIndex);
 				NoteListBox.SelectedIndex = -1;
 				UpdateNoteListBox();
