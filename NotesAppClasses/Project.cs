@@ -49,7 +49,6 @@ namespace NotesAppClasses
 		public void SetNoteByIndex(int index, Note note)
 		{
 			_notes[index] = note;
-			SortNotesByDate();
 		}
 
 		/// <summary>
@@ -59,7 +58,6 @@ namespace NotesAppClasses
 		public void RemoveNote(int index)
 		{
 			_notes.RemoveAt(index);
-			SortNotesByDate();
 		}
 
 		/// <summary>
@@ -69,7 +67,6 @@ namespace NotesAppClasses
 		public void AddNote(Note note)
 		{
 			_notes.Add(note);
-			SortNotesByDate();
 		}
 
 		/// <summary>
