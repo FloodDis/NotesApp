@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesAppClasses", "NotesApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesAppUI", "NotesAppUI\NotesAppUI.csproj", "{7B852B9C-5E87-43C4-BA43-31F1B6213333}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesAppUnitTests", "NotesAppUnitTests\NotesAppUnitTests.csproj", "{8AA2C6EA-6577-4C79-9777-4B6D7477DB7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesApp.UnitTests", "NotesAppUnitTests\NotesApp.UnitTests.csproj", "{8AA2C6EA-6577-4C79-9777-4B6D7477DB7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
