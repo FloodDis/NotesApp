@@ -17,7 +17,7 @@ namespace NotesAppClasses
 		/// <summary>
 		/// Стандартный заголовок заметки
 		/// </summary>
-		private const string _defaultNoteTitle = "Untitled Note";
+		private const string _defaultNoteName = "Untitled Note";
 
 		/// <summary>
 		/// Содержимое заметки по умолчанию
@@ -32,7 +32,7 @@ namespace NotesAppClasses
 		/// <summary>
 		/// Название заметки
 		/// </summary>
-		[JsonProperty]		
+		[JsonProperty]
 		private string _name;
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace NotesAppClasses
 		{
 			if (name == "")
 			{
-				_name = "Без названия";
+				_name = _defaultNoteName;
 			}
 			else
 			{
@@ -162,14 +162,14 @@ namespace NotesAppClasses
 		/// <summary>
 		/// Создание заметки по заданному заголовку, содержимому и её категории
 		/// </summary>
-		/// <param name="title">Заголовок заметки</param>
+		/// <param name="name">Заголовок заметки</param>
 		/// <param name="text">Содержимое заметки</param>
-		/// <param name="noteCategory">Категория заметки</param>
-		public Note(string title = _defaultNoteTitle, string text = _defaultNoteText, Category noteCategory = _defaultNoteCategory)
+		/// <param name="category">Категория заметки</param>
+		public Note(string name = _defaultNoteName, string text = _defaultNoteText, Category category = _defaultNoteCategory)
 		{
-			_name = title;
+			_name = name;
 			_text = text;
-			_category = noteCategory;
+			_category = category;
 		}
 	}
 }
