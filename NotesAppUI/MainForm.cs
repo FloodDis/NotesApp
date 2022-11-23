@@ -17,7 +17,7 @@ namespace NotesAppUI
 		/// <summary>
 		/// Список заметок
 		/// </summary>
-		private Project _notebook;
+		private Project _notesList;
 
 		/// <summary>
 		/// Список заметок для отображения на экране
@@ -28,21 +28,18 @@ namespace NotesAppUI
 		{
 			InitializeComponent();
 
-			_notebook = new Project();
-			_displayedNotes = _notebook;
+			_notesList = new Project();
+			_displayedNotes = _notesList;
 
 			if (File.Exists(ProjectManager.GetPath()))
 			{
 				try
 				{
-					_notebook = ProjectManager.Load();
+					_notesList = ProjectManager.Load();
 				}
 				catch
 				{
-					MessageBox.Show(string.Format("Failed to load notebook from {0}, " 
-						+"check whatever file exist or maybe corrupted.", 
-						ProjectManager.GetPath()), 
-						"Error occured.");
+					MessageBox.Show("Can't load list of saved notes from path", "Error");
 				}
 			}
 		}
@@ -80,7 +77,7 @@ namespace NotesAppUI
 		/// </summary>
 		private void UpdateNoteListBox()
 		{
-			_displayedNotes = _notebook.GetNotesWithCategory((Category)CategoryComboBox.SelectedItem);
+			_displayedNotes = _notesList.GetNotesWithCategory((Category)CategoryComboBox.SelectedItem);
 			NoteListBox.Items.Clear();
 			for (int i = 0; i < _displayedNotes.GetNoteCount(); ++i)
 			{
@@ -101,8 +98,8 @@ namespace NotesAppUI
 			DialogResult result = noteEditForm.ShowDialog();
 			if (result == DialogResult.OK)
 			{
-				_notebook.AddNote(newNote);
-				_notebook.SortNotes();
+				_notesList.AddNote(newNote);
+				_notesList.SortNotes();
 				ShowNote(newNote);
 				UpdateNoteListBox();
 			}
@@ -124,14 +121,14 @@ namespace NotesAppUI
 				DialogResult result = noteEditForm.ShowDialog();
 				if (result == DialogResult.OK)
 				{
-					ProjectManager.Save(_notebook);
+					ProjectManager.Save(_notesList);
 					ShowNote(selectedNote);
 					UpdateNoteListBox();
 				}
 			}
 			catch
 			{
-				MessageBox.Show("Please select what note need to be edited.", "Error occured.");
+				MessageBox.Show("Select note that needs editing", "Error");
 			}
 		}
 
@@ -145,14 +142,14 @@ namespace NotesAppUI
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
 			{
-				_notebook.SortNotes();
-				_notebook.RemoveNote(selectedNoteIndex);
+				_notesList.SortNotes();
+				_notesList.RemoveNote(selectedNoteIndex);
 				NoteListBox.SelectedIndex = -1;
 				UpdateNoteListBox();
 			}
 			catch
 			{
-				MessageBox.Show("Please select what note need to be removed.", "Error occured.");
+				MessageBox.Show("Select note for removal", "Error");
 			}
 		}
 
@@ -185,7 +182,7 @@ namespace NotesAppUI
 
 		private void NotesAppUIForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			ProjectManager.Save(_notebook);
+			ProjectManager.Save(_notesList);
 		}
 
 		private void ExitToolStripMenuItem_Click(object sender, EventArgs e)

@@ -22,7 +22,7 @@ namespace NotesAppClasses
 		/// <summary>
 		/// Содержимое заметки по умолчанию
 		/// </summary>
-		private const string _defaultNoteText = "Write your note here.";
+		private const string _defaultNoteText = "Text of your note";
 
 		/// <summary>
 		/// Стандартная категория заметки
@@ -92,7 +92,14 @@ namespace NotesAppClasses
 		/// <param name="text">Текст заметки</param>
 		public void SetText(string text)
 		{
-			_text = text;
+			if (text == "")
+			{
+				_text = _defaultNoteText;
+			}
+			else
+			{
+				_text = text;
+			}
 			_modificationTime = DateTime.Now;
 		}
 
@@ -160,16 +167,26 @@ namespace NotesAppClasses
 		}
 
 		/// <summary>
-		/// Создание заметки по заданному заголовку, содержимому и её категории
+		/// Конструктор Note
 		/// </summary>
 		/// <param name="name">Заголовок заметки</param>
 		/// <param name="text">Содержимое заметки</param>
 		/// <param name="category">Категория заметки</param>
-		public Note(string name = _defaultNoteName, string text = _defaultNoteText, Category category = _defaultNoteCategory)
+		public Note(string name, string text, Category category)
 		{
-			_name = name;
-			_text = text;
-			_category = category;
+			SetName(name);
+			SetText(text);
+			SetCategory(category);
+		}
+
+		/// <summary>
+		/// Конструктор Note по умолчанию
+		/// </summary>
+		public Note()
+		{
+			SetName(_defaultNoteName);
+			SetText(_defaultNoteText);
+			SetCategory(_defaultNoteCategory);
 		}
 	}
 }
