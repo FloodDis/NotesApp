@@ -77,19 +77,23 @@ namespace NotesAppClasses
 		/// <returns>Загруженный список заметок</returns>
 		public static Project Load()
 		{
-			Project notebook = new Project();
+			Project project = new Project();
 			JsonSerializer serializer = new JsonSerializer();
-			using (StreamReader sr = new StreamReader(_path))
-			using (JsonReader reader = new JsonTextReader(sr))
-			{
-				notebook = serializer.Deserialize<Project>(reader);
-			}
-
-			if (notebook == null)
+			if(!File.Exists(_path))
 			{
 				return new Project();
 			}
-			return notebook;
+			using (StreamReader sr = new StreamReader(_path))
+			using (JsonReader reader = new JsonTextReader(sr))
+			{
+				project = serializer.Deserialize<Project>(reader);
+			}
+
+			if (project == null)
+			{
+				return new Project();
+			}
+			return project;
 		}
 	}
 }

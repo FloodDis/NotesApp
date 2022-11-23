@@ -9,7 +9,7 @@ using NotesAppClasses;
 namespace NotesApp.UnitTests
 {
 	[TestFixture]
-	internal class ProjectTest
+	public class ProjectTest
 	{
 		[Test(Description = "Тест геттера кол-ва заметок в списке")]
 		public void TestNotesCountsGet()
