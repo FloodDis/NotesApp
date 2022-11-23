@@ -77,7 +77,6 @@ namespace NotesAppClasses
 		/// </summary>
 		public void SortNotesByDate()
 		{
-			/*_notes.Sort((t1, t2) => DateTime.Compare(t2.GetCreationTime(), t1.GetModificationTime()));*/
 			for (int i = 0; i < GetNoteCount(); i++)
 			{
 				for (int j = i; j > 0; j--)
@@ -105,18 +104,19 @@ namespace NotesAppClasses
 			}
 
 			Project result = new Project();
-			foreach (Note note in _notes)
+			
+			for (int i = 0; i < GetNoteCount(); i++)
 			{
-				if (note.GetCategory() == noteCategory)
+				if (_notes[i].GetCategory() == noteCategory)
 				{
-					result.AddNote(note);
+					result.AddNote(_notes[i]);
 				}
 			}
 			return result;
 		}
 
 		/// <summary>
-		/// Конструктор без параметров
+		/// Конструктор по умолчанию
 		/// </summary>
 		public Project()
 		{
