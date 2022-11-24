@@ -5,7 +5,7 @@ namespace NotesApp.UnitTests
 	[TestFixture]
 	public class NoteTest
 	{
-		[Test(Description = "Тест сеттера и геттера _name в случае присвоения непустой строки")]
+		[Test(Description = "РўРµСЃС‚ СЃРµС‚С‚РµСЂР° Рё РіРµС‚С‚РµСЂР° _name РІ СЃР»СѓС‡Р°Рµ РїСЂРёСЃРІРѕРµРЅРёСЏ РЅРµРїСѓСЃС‚РѕР№ СЃС‚СЂРѕРєРё")]
 		public void TestNameSetGet_NotEmptyName()
 		{
 			var expected = "New note";
@@ -17,7 +17,7 @@ namespace NotesApp.UnitTests
 			Assert.AreEqual(expected, actual);
 		}
 
-		[Test(Description = "Тест сеттера и геттера _name в случае присвоения пустой строки")]
+		[Test(Description = "РўРµСЃС‚ СЃРµС‚С‚РµСЂР° Рё РіРµС‚С‚РµСЂР° _name РІ СЃР»СѓС‡Р°Рµ РїСЂРёСЃРІРѕРµРЅРёСЏ РїСѓСЃС‚РѕР№ СЃС‚СЂРѕРєРё")]
 		public void TestNameSetGet_EmptyName()
 		{
 			var expected = "Untitled Note";
@@ -29,7 +29,7 @@ namespace NotesApp.UnitTests
 			Assert.AreEqual(expected, actual);
 		}
 
-		[Test(Description = "Тест сеттера и геттера _category")]
+		[Test(Description = "РўРµСЃС‚ СЃРµС‚С‚РµСЂР° Рё РіРµС‚С‚РµСЂР° _category")]
 		public void TestCategorySetGet()
 		{
 			var expected = Category.People;
@@ -41,7 +41,7 @@ namespace NotesApp.UnitTests
 			Assert.AreEqual(expected, actual);
 		}
 
-		[Test(Description = "Тест сеттера и геттера _text в случае присвоения непустой строки")]
+		[Test(Description = "РўРµСЃС‚ СЃРµС‚С‚РµСЂР° Рё РіРµС‚С‚РµСЂР° _text РІ СЃР»СѓС‡Р°Рµ РїСЂРёСЃРІРѕРµРЅРёСЏ РЅРµРїСѓСЃС‚РѕР№ СЃС‚СЂРѕРєРё")]
 		public void TestTextSetGet_NotEmptyText()
 		{
 			var expected = "Note text";
@@ -53,7 +53,7 @@ namespace NotesApp.UnitTests
 			Assert.AreEqual(expected, actual);
 		}
 
-		[Test(Description = "Тест сеттера и геттера _text в случае присвоения пустой строки")]
+		[Test(Description = "РўРµСЃС‚ СЃРµС‚С‚РµСЂР° Рё РіРµС‚С‚РµСЂР° _text РІ СЃР»СѓС‡Р°Рµ РїСЂРёСЃРІРѕРµРЅРёСЏ РїСѓСЃС‚РѕР№ СЃС‚СЂРѕРєРё")]
 		public void TestTextSetGet_EmptyText()
 		{
 			var expected = "Text of your note";
@@ -65,7 +65,7 @@ namespace NotesApp.UnitTests
 			Assert.AreEqual(expected, actual);
 		}
 
-		[Test(Description = "Тест сеттера и геттера _creationTime")]
+		[Test(Description = "РўРµСЃС‚ СЃРµС‚С‚РµСЂР° Рё РіРµС‚С‚РµСЂР° _creationTime")]
 		public void TestCreationTimeSetGet()
 		{
 			var expected = DateTime.Now;
@@ -77,7 +77,7 @@ namespace NotesApp.UnitTests
 			Assert.AreEqual(expected, actual);
 		}
 
-		[Test(Description = "Тест сеттера и геттера _modificationTime")]
+		[Test(Description = "РўРµСЃС‚ СЃРµС‚С‚РµСЂР° Рё РіРµС‚С‚РµСЂР° _modificationTime")]
 		public void TestModificationTime()
 		{
 			var expected = DateTime.Now;
@@ -89,7 +89,7 @@ namespace NotesApp.UnitTests
 			Assert.AreEqual(expected, actual);
 		}
 
-		[Test(Description = "Тест конструктора Note не по умолчанию")]
+		[Test(Description = "РўРµСЃС‚ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° Note РЅРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ")]
 		public void TestNotDefaultNoteConstructor()
 		{
 			var expectedName = "New note";
@@ -106,7 +106,7 @@ namespace NotesApp.UnitTests
 			Assert.AreEqual(expectedCategory, actualCategory);
 		}
 
-		[Test(Description = "Тест конструктора Note по умолчанию")]
+		[Test(Description = "РўРµСЃС‚ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° Note РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ")]
 		public void TestDefaultNoteConstructor() 
 		{
 			var expectedName = "Untitled Note";
