@@ -52,22 +52,29 @@ namespace NotesAppClasses
 			JsonSerializer serializer = new JsonSerializer();
 			if (!File.Exists(_path))
 			{
-				using (File.Create(_path)) 
-				{
-					using (StreamWriter sw = new StreamWriter(_path))
-					using (JsonWriter writer = new JsonTextWriter(sw))
-					{
-						serializer.Serialize(writer, project);
-					}
-				} ;
-			}
-			else
-			{
-				using (StreamWriter sw = new StreamWriter(_path))
-				using (JsonWriter writer = new JsonTextWriter(sw))
+				File.Create(_path).Close();
+
+				StreamWriter sw = new StreamWriter(_path);
+				JsonWriter writer = new JsonTextWriter(sw);
+				using (sw)
+				using (writer)
 				{
 					serializer.Serialize(writer, project);
 				}
+				sw.Close();
+				writer.Close();
+			}
+			else
+			{
+				StreamWriter sw = new StreamWriter(_path);
+				JsonWriter writer = new JsonTextWriter(sw);
+				using (sw)
+				using (writer)
+				{
+					serializer.Serialize(writer, project);
+				}
+				sw.Close();
+				writer.Close();
 			}
 		}
 
@@ -79,15 +86,19 @@ namespace NotesAppClasses
 		{
 			Project project = new Project();
 			JsonSerializer serializer = new JsonSerializer();
-			if(!File.Exists(_path))
+			StreamReader sr = new StreamReader(_path);
+			JsonReader reader = new JsonTextReader(sr);
+			if (!File.Exists(_path))
 			{
 				return new Project();
 			}
-			using (StreamReader sr = new StreamReader(_path))
-			using (JsonReader reader = new JsonTextReader(sr))
+			using (sr)
+			using (reader)
 			{
 				project = serializer.Deserialize<Project>(reader);
 			}
+			sr.Close();
+			reader.Close();
 
 			if (project == null)
 			{
