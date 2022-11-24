@@ -21,7 +21,7 @@ namespace NotesAppUI
 		/// <summary>
 		/// Сеттер заметки для редактирования
 		/// </summary>
-		/// <param name="note"></param>
+		/// <param name="note">Вводимая заметка</param>
 		public void SetNote(Note note)
 		{
 			_noteToEdit = note;
@@ -40,12 +40,22 @@ namespace NotesAppUI
 			_noteToEdit = new Note();
 		}
 
+		/// <summary>
+		/// Выход из AddEditForm
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void CancelButton_Click(object sender, EventArgs e)
 		{
 			DialogResult = DialogResult.Cancel;
 			Close();
 		}
 
+		/// <summary>
+		/// Ввести введеные в форме данные в заметку
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void OKButton_Click(object sender, EventArgs e)
 		{
 			if (TitleTextBox.Text.Length > 15)

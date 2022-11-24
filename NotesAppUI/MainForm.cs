@@ -31,16 +31,13 @@ namespace NotesAppUI
 			_notesList = new Project();
 			_displayedNotes = _notesList;
 
-			if (File.Exists(ProjectManager.GetPath()))
+			try
 			{
-				try
-				{
-					_notesList = ProjectManager.Load();
-				}
-				catch
-				{
-					MessageBox.Show("Can't load list of saved notes from path", "Error");
-				}
+				_notesList = ProjectManager.Load();
+			}
+			catch
+			{
+				MessageBox.Show("Can't load list of saved notes from path", "Error");
 			}
 		}
 
@@ -57,6 +54,11 @@ namespace NotesAppUI
 			CategoryComboBox.SelectedItem = Category.Default;
 		}
 
+		/// <summary>
+		/// Открыть форму со справочной информацией
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			AboutForm form = new AboutForm();
@@ -77,7 +79,7 @@ namespace NotesAppUI
 		}
 
 		/// <summary>
-		/// Обновить содержимое списка заметок
+		/// Обновить содержимое списка заметок, отображаемого в ListBox
 		/// </summary>
 		private void UpdateNoteListBox()
 		{
@@ -147,7 +149,6 @@ namespace NotesAppUI
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
 			{
-				_notesList.SortNotesByDate();
 				_notesList.RemoveNote(selectedNoteIndex);
 				NoteListBox.SelectedIndex = 0;
 				UpdateNoteListBox();
@@ -169,7 +170,7 @@ namespace NotesAppUI
 		}
 
 		private void NoteListBox_SelectedIndexChanged(object sender, EventArgs e)
-		{	
+		{
 			if (NoteListBox.SelectedIndex != -1)
 			{
 				Note selectedNote = _displayedNotes.GetNoteByIndex(NoteListBox.SelectedIndex);
