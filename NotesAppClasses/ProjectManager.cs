@@ -53,29 +53,16 @@ namespace NotesAppClasses
 			if (!File.Exists(_path))
 			{
 				File.Create(_path).Close();
-
-				StreamWriter sw = new StreamWriter(_path);
-				JsonWriter writer = new JsonTextWriter(sw);
-				using (sw)
-				using (writer)
-				{
-					serializer.Serialize(writer, project);
-				}
-				sw.Close();
-				writer.Close();
 			}
-			else
+			StreamWriter sw = new StreamWriter(_path);
+			JsonWriter writer = new JsonTextWriter(sw);
+			using (sw)
+			using (writer)
 			{
-				StreamWriter sw = new StreamWriter(_path);
-				JsonWriter writer = new JsonTextWriter(sw);
-				using (sw)
-				using (writer)
-				{
-					serializer.Serialize(writer, project);
-				}
-				sw.Close();
-				writer.Close();
+				serializer.Serialize(writer, project);
 			}
+			sw.Close();
+			writer.Close();
 		}
 
 		/// <summary>
