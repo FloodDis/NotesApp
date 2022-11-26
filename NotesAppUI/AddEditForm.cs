@@ -60,7 +60,8 @@ namespace NotesAppUI
 		{
 			if (TitleTextBox.Text.Length > 15)
 			{
-				MessageBox.Show("The note name must be less than 15", "Error");
+				MessageBox.Show("The note name must be less than 15", "Error",
+					MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 
