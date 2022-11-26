@@ -73,12 +73,12 @@ namespace NotesAppClasses
 		{
 			Project project = new Project();
 			JsonSerializer serializer = new JsonSerializer();
-			StreamReader sr = new StreamReader(_path);
-			JsonReader reader = new JsonTextReader(sr);
 			if (!File.Exists(_path))
 			{
 				return new Project();
 			}
+			StreamReader sr = new StreamReader(_path);
+			JsonReader reader = new JsonTextReader(sr);
 			using (sr)
 			using (reader)
 			{
