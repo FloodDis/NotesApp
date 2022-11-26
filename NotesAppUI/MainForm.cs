@@ -37,7 +37,8 @@ namespace NotesAppUI
 			}
 			catch
 			{
-				MessageBox.Show("Can't load list of saved notes from path", "Error");
+				MessageBox.Show("Can't load list of saved notes from path", "Error",
+					MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 
@@ -135,7 +136,8 @@ namespace NotesAppUI
 			}
 			catch
 			{
-				MessageBox.Show("Select note that needs editing", "Error");
+				MessageBox.Show("Select note that needs editing", "Error",
+					MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 
@@ -155,7 +157,8 @@ namespace NotesAppUI
 			}
 			catch
 			{
-				MessageBox.Show("Select note for removal", "Error");
+				MessageBox.Show("Select note for removal", "Error", 
+					MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 
