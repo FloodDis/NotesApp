@@ -54,15 +54,12 @@ namespace NotesAppClasses
 			{
 				File.Create(_path).Close();
 			}
-			StreamWriter sw = new StreamWriter(_path);
-			JsonWriter writer = new JsonTextWriter(sw);
-			using (sw)
-			using (writer)
+			
+			using (StreamWriter sw = new StreamWriter(_path))
+			using (JsonWriter writer = new JsonTextWriter(sw))
 			{
 				serializer.Serialize(writer, project);
 			}
-			sw.Close();
-			writer.Close();
 		}
 
 		/// <summary>
@@ -77,15 +74,13 @@ namespace NotesAppClasses
 			{
 				return new Project();
 			}
-			StreamReader sr = new StreamReader(_path);
-			JsonReader reader = new JsonTextReader(sr);
-			using (sr)
-			using (reader)
+			
+			
+			using (StreamReader sr = new StreamReader(_path))
+			using (JsonReader reader = new JsonTextReader(sr))
 			{
 				project = serializer.Deserialize<Project>(reader);
 			}
-			sr.Close();
-			reader.Close();
 
 			if (project == null)
 			{
