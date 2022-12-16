@@ -25,12 +25,12 @@ namespace NotesAppUI
 		public void SetNote(Note note)
 		{
 			_noteToEdit = note;
-			TitleTextBox.Text = _noteToEdit.GetName();
+			TitleTextBox.Text = _noteToEdit.Name;
+			AddCategoryComboBox.Text = _noteToEdit.Category.ToString();
 			NoteRichTextBox.Text = _noteToEdit.GetText();
 			CreationDateTimePicker.Value = _noteToEdit.GetCreationTime();
 			ModificationDateTimePicker.Value = _noteToEdit.GetModificationTime();
 			AddCategoryComboBox.SelectedItem = _noteToEdit.GetCategory();
-			AddCategoryComboBox.Text = _noteToEdit.GetCategory().ToString();
 		}
 
 		public AddEditForm()

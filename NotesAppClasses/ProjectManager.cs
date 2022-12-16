@@ -75,7 +75,6 @@ namespace NotesAppClasses
 				return new Project();
 			}
 			
-			
 			using (StreamReader sr = new StreamReader(_path))
 			using (JsonReader reader = new JsonTextReader(sr))
 			{

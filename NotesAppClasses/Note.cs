@@ -76,6 +76,31 @@ namespace NotesAppClasses
 			_modificationTime = DateTime.Now;
 		}
 
+		public string Name
+		{
+			get { return _name; }
+			set
+			{
+				if (value=="")
+				{
+					_name = _defaultNoteName;
+				}
+				else
+				{
+					_name = value;
+				}
+			}
+		}
+
+		public Category Category 
+		{ 
+			get { return _category; }
+			set
+			{
+				_category = value;
+			}
+		}
+
 		/// <summary>
 		/// Сеттер поля _category
 		/// </summary>
