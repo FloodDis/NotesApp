@@ -129,11 +129,9 @@ namespace NotesAppUI
 		}
 
 		/// <summary>
-		/// Удалить заметку
+		/// Функция удаления заметки
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void RemoveButton_Click(object sender, EventArgs e)
+		void RemoveNote()
 		{
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
@@ -144,9 +142,20 @@ namespace NotesAppUI
 			}
 			catch
 			{
-				MessageBox.Show("Select note for removal", "Error", 
+				MessageBox.Show("Select note for removal", "Error",
 					MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
+		}
+
+		/// <summary>
+		/// Удалить заметку
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void RemoveButton_Click(object sender, EventArgs e)
+		{
+			RemoveNote();
+			ProjectManager.Save(_notesList);
 		}
 
 		/// <summary>
@@ -193,7 +202,8 @@ namespace NotesAppUI
 
 		private void RemoveNoteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			RemoveButton_Click(sender, e);
+			RemoveNote();
+			ProjectManager.Save(_notesList);
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
