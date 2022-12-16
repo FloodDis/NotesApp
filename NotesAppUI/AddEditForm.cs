@@ -65,10 +65,10 @@ namespace NotesAppUI
 				return;
 			}
 
-			_noteToEdit.SetCategory((Category)AddCategoryComboBox.SelectedItem);
-			_noteToEdit.SetName(TitleTextBox.Text);
-			_noteToEdit.SetText(NoteRichTextBox.Text);
-			_noteToEdit.SetModificationTime(DateTime.Now);
+			_noteToEdit.Category = (Category)AddCategoryComboBox.SelectedItem;
+			_noteToEdit.Name = TitleTextBox.Text;
+			_noteToEdit.Text = NoteRichTextBox.Text;
+			_noteToEdit.ModificationTime = DateTime.Now;
 
 			DialogResult = DialogResult.OK;
 			Close();

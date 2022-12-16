@@ -81,7 +81,7 @@ namespace NotesAppClasses
 			get { return _name; }
 			set
 			{
-				if (value=="")
+				if (value == "")
 				{
 					_name = _defaultNoteName;
 				}
@@ -96,8 +96,8 @@ namespace NotesAppClasses
 		/// <summary>
 		/// Свойство поля _category
 		/// </summary>
-		public Category Category 
-		{ 
+		public Category Category
+		{
 			get { return _category; }
 			set
 			{
@@ -249,9 +249,9 @@ namespace NotesAppClasses
 		/// <param name="category">Категория заметки</param>
 		public Note(string name, string text, Category category)
 		{
-			SetName(name);
-			SetText(text);
-			SetCategory(category);
+			this.Name = name;
+			this.Text = text;
+			this.Category = category;
 		}
 
 		/// <summary>
@@ -259,9 +259,9 @@ namespace NotesAppClasses
 		/// </summary>
 		public Note()
 		{
-			SetName(_defaultNoteName);
-			SetText(_defaultNoteText);
-			SetCategory(_defaultNoteCategory);
+			this.Name = _defaultNoteName;
+			this.Text = _defaultNoteText;
+			this.Category = _defaultNoteCategory;
 		}
 	}
 }
