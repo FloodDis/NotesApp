@@ -59,11 +59,11 @@ namespace NotesAppUI
 		/// <param name="noteToShow">Заметка для отображения</param>
 		private void ShowNote(Note noteToShow)
 		{
-			NoteTitleLabel.Text = noteToShow.GetName();
-			CategoryLabel.Text = "Category: " + noteToShow.GetCategory().ToString();
-			NoteTextRichTextBox.Text = noteToShow.GetText();
-			CreationTimePicker.Value = noteToShow.GetCreationTime();
-			ModificationTimePicker.Value = noteToShow.GetModificationTime();
+			NoteTitleLabel.Text = noteToShow.Name;
+			CategoryLabel.Text = "Category: " + noteToShow.Category.ToString();
+			NoteTextRichTextBox.Text = noteToShow.Text;
+			CreationTimePicker.Value = noteToShow.CreationTime;
+			ModificationTimePicker.Value = noteToShow.ModificationTime;
 		}
 
 		/// <summary>
