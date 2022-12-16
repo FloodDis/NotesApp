@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NotesAppClasses;
+using System.Linq;
 
 namespace NotesAppUI
 {
@@ -22,14 +23,14 @@ namespace NotesAppUI
 		/// <summary>
 		/// Список заметок для отображения на экране
 		/// </summary>
-		private Project _displayedNotes;
+		private List<Note> _displayedNotes;
 
 		public MainForm()
 		{
 			InitializeComponent();
 
 			_notesList = new Project();
-			_displayedNotes = _notesList;
+			_displayedNotes = _notesList.Notes;
 
 			try
 			{
@@ -73,9 +74,9 @@ namespace NotesAppUI
 		{
 			_displayedNotes = _notesList.GetNotesWithCategory((Category)CategoryComboBox.SelectedItem);
 			NoteListBox.Items.Clear();
-			for (int i = 0; i < _displayedNotes.GetNoteCount(); ++i)
+			for (int i = 0; i < _displayedNotes.Count; ++i)
 			{
-				NoteListBox.Items.Add(_displayedNotes.GetNoteByIndex(i).GetName());
+				NoteListBox.Items.Add(_displayedNotes[i].GetName());
 			}
 		}
 
@@ -92,6 +93,7 @@ namespace NotesAppUI
 			{
 				_notesList.AddNote(newNote);
 				_notesList.SortNotesByDate();
+				//var sortedNotes= _notesList.
 				ShowNote(newNote);
 				UpdateNoteListBox();
 			}
@@ -116,7 +118,7 @@ namespace NotesAppUI
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
 			{
-				Note selectedNote = _displayedNotes.GetNoteByIndex(selectedNoteIndex);
+				Note selectedNote = _displayedNotes[selectedNoteIndex];
 				NoteForm noteEditForm = new NoteForm();
 				noteEditForm.NoteToEdit = selectedNote;
 				DialogResult result = noteEditForm.ShowDialog();
@@ -189,7 +191,7 @@ namespace NotesAppUI
 		{
 			if (NoteListBox.SelectedIndex != -1)
 			{
-				Note selectedNote = _displayedNotes.GetNoteByIndex(NoteListBox.SelectedIndex);
+				Note selectedNote = _displayedNotes[NoteListBox.SelectedIndex];
 				ShowNote(selectedNote);
 			}
 			else

@@ -23,6 +23,14 @@ namespace NotesAppClasses
 		private List<Note> _notes;
 
 		/// <summary>
+		/// Свойство получения списка заметок
+		/// </summary>
+		public List<Note> Notes
+		{
+			get { return _notes; }
+		}
+
+		/// <summary>
 		/// Получить текущее кол-во заметок
 		/// </summary>
 		/// <returns>Текущее кол-во заметок</returns>
@@ -93,20 +101,20 @@ namespace NotesAppClasses
 		/// Получить список заметок с заданной категорией
 		/// </summary>
 		/// <param name="noteCategory">Категория заметки</param>
-		public Project GetNotesWithCategory(Category noteCategory)
+		public List<Note> GetNotesWithCategory(Category noteCategory)
 		{
 			if (noteCategory == Category.Default)
 			{
-				return this;
+				return _notes;
 			}
 
-			Project result = new Project();
+			List<Note> result = new List<Note>();
 			
 			for (int i = 0; i < GetNoteCount(); i++)
 			{
 				if (_notes[i].GetCategory() == noteCategory)
 				{
-					result.AddNote(_notes[i]);
+					result.Add(_notes[i]);
 				}
 			}
 			return result;
