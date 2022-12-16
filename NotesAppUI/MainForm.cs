@@ -42,8 +42,6 @@ namespace NotesAppUI
 			}
 		}
 
-		
-
 		/// <summary>
 		/// Открыть форму со справочной информацией
 		/// </summary>

@@ -91,14 +91,11 @@ namespace NotesAppUI
 
 		private void AddEditForm_Load(object sender, EventArgs e)
 		{
-			AddCategoryComboBox.Items.Add(Category.Default);
-			AddCategoryComboBox.Items.Add(Category.Documents);
-			AddCategoryComboBox.Items.Add(Category.Finances);
-			AddCategoryComboBox.Items.Add(Category.HealthAndSport);
-			AddCategoryComboBox.Items.Add(Category.Home);
-			AddCategoryComboBox.Items.Add(Category.Other);
-			AddCategoryComboBox.Items.Add(Category.People);
-			AddCategoryComboBox.Items.Add(Category.Work);
+			foreach (Category category in Enum.GetValues(typeof(Category)))
+			{
+				AddCategoryComboBox.Items.Add(category);
+			}
+			AddCategoryComboBox.SelectedItem = Category.Default;
 		}
 	}
 }
