@@ -79,12 +79,7 @@ namespace NotesAppUI
 			}
 		}
 
-		/// <summary>
-		/// Добавить новую заметку
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void AddButton_Click(object sender, EventArgs e)
+		private void AddNote()
 		{
 			Note newNote = new Note();
 			AddEditForm noteEditForm = new AddEditForm();
@@ -97,14 +92,20 @@ namespace NotesAppUI
 				ShowNote(newNote);
 				UpdateNoteListBox();
 			}
+			ProjectManager.Save(_notesList);
 		}
 
 		/// <summary>
-		/// Отредактировать заметку
+		/// Добавить новую заметку
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void EditButton_Click(object sender, EventArgs e)
+		private void AddButton_Click(object sender, EventArgs e)
+		{
+			AddNote();
+		}
+
+		private void EditNote()
 		{
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
@@ -129,6 +130,16 @@ namespace NotesAppUI
 		}
 
 		/// <summary>
+		/// Отредактировать заметку
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void EditButton_Click(object sender, EventArgs e)
+		{
+			EditNote();
+		}
+
+		/// <summary>
 		/// Функция удаления заметки
 		/// </summary>
 		void RemoveNote()
@@ -145,6 +156,7 @@ namespace NotesAppUI
 				MessageBox.Show("Select note for removal", "Error",
 					MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
+			ProjectManager.Save(_notesList);
 		}
 
 		/// <summary>
@@ -155,7 +167,6 @@ namespace NotesAppUI
 		private void RemoveButton_Click(object sender, EventArgs e)
 		{
 			RemoveNote();
-			ProjectManager.Save(_notesList);
 		}
 
 		/// <summary>
@@ -192,18 +203,17 @@ namespace NotesAppUI
 
 		private void AddNoteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			AddButton_Click(sender, e);
+			AddNote();
 		}
 
 		private void EditNoteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			EditButton_Click(sender, e);
+			EditNote();
 		}
 
 		private void RemoveNoteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			RemoveNote();
-			ProjectManager.Save(_notesList);
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
