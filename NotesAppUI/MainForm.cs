@@ -101,7 +101,7 @@ namespace NotesAppUI
 		{
 			Note newNote = new Note();
 			AddEditForm noteEditForm = new AddEditForm();
-			noteEditForm.SetNote(newNote);
+			noteEditForm.NoteToEdit = newNote;
 			DialogResult result = noteEditForm.ShowDialog();
 			if (result == DialogResult.OK)
 			{
@@ -124,7 +124,7 @@ namespace NotesAppUI
 			{
 				Note selectedNote = _displayedNotes.GetNoteByIndex(selectedNoteIndex);
 				AddEditForm noteEditForm = new AddEditForm();
-				noteEditForm.SetNote(selectedNote);
+				noteEditForm.NoteToEdit = selectedNote;
 				DialogResult result = noteEditForm.ShowDialog();
 				if (result == DialogResult.OK)
 				{
