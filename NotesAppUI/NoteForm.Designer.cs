@@ -1,6 +1,6 @@
 ﻿namespace NotesAppUI
 {
-	partial class AddEditForm
+	partial class NoteForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -44,83 +44,89 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(13, 13);
+			this.label1.Location = new System.Drawing.Point(13, 16);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(36, 16);
+			this.label1.Size = new System.Drawing.Size(41, 20);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Title:";
 			// 
 			// TitleTextBox
 			// 
-			this.TitleTextBox.Location = new System.Drawing.Point(84, 13);
+			this.TitleTextBox.Location = new System.Drawing.Point(84, 16);
+			this.TitleTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.TitleTextBox.Name = "TitleTextBox";
-			this.TitleTextBox.Size = new System.Drawing.Size(513, 22);
+			this.TitleTextBox.Size = new System.Drawing.Size(513, 27);
 			this.TitleTextBox.TabIndex = 1;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(13, 53);
+			this.label2.Location = new System.Drawing.Point(13, 66);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(65, 16);
+			this.label2.Size = new System.Drawing.Size(72, 20);
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Category:";
 			// 
 			// AddCategoryComboBox
 			// 
 			this.AddCategoryComboBox.FormattingEnabled = true;
-			this.AddCategoryComboBox.Location = new System.Drawing.Point(85, 53);
+			this.AddCategoryComboBox.Location = new System.Drawing.Point(85, 66);
+			this.AddCategoryComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.AddCategoryComboBox.Name = "AddCategoryComboBox";
-			this.AddCategoryComboBox.Size = new System.Drawing.Size(121, 24);
+			this.AddCategoryComboBox.Size = new System.Drawing.Size(121, 28);
 			this.AddCategoryComboBox.TabIndex = 3;
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(241, 99);
+			this.label4.Location = new System.Drawing.Point(241, 124);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(62, 16);
+			this.label4.Size = new System.Drawing.Size(73, 20);
 			this.label4.TabIndex = 7;
 			this.label4.Text = "Modified:";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(13, 99);
+			this.label3.Location = new System.Drawing.Point(13, 124);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(58, 16);
+			this.label3.Size = new System.Drawing.Size(64, 20);
 			this.label3.TabIndex = 6;
 			this.label3.Text = "Created:";
 			// 
 			// CreationDateTimePicker
 			// 
 			this.CreationDateTimePicker.Enabled = false;
-			this.CreationDateTimePicker.Location = new System.Drawing.Point(84, 94);
+			this.CreationDateTimePicker.Location = new System.Drawing.Point(84, 118);
+			this.CreationDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.CreationDateTimePicker.Name = "CreationDateTimePicker";
-			this.CreationDateTimePicker.Size = new System.Drawing.Size(134, 22);
+			this.CreationDateTimePicker.Size = new System.Drawing.Size(134, 27);
 			this.CreationDateTimePicker.TabIndex = 8;
 			// 
 			// ModificationDateTimePicker
 			// 
 			this.ModificationDateTimePicker.Enabled = false;
-			this.ModificationDateTimePicker.Location = new System.Drawing.Point(309, 94);
+			this.ModificationDateTimePicker.Location = new System.Drawing.Point(309, 118);
+			this.ModificationDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.ModificationDateTimePicker.Name = "ModificationDateTimePicker";
-			this.ModificationDateTimePicker.Size = new System.Drawing.Size(134, 22);
+			this.ModificationDateTimePicker.Size = new System.Drawing.Size(134, 27);
 			this.ModificationDateTimePicker.TabIndex = 9;
 			// 
 			// NoteRichTextBox
 			// 
-			this.NoteRichTextBox.Location = new System.Drawing.Point(16, 137);
+			this.NoteRichTextBox.Location = new System.Drawing.Point(16, 171);
+			this.NoteRichTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.NoteRichTextBox.Name = "NoteRichTextBox";
-			this.NoteRichTextBox.Size = new System.Drawing.Size(583, 355);
+			this.NoteRichTextBox.Size = new System.Drawing.Size(583, 443);
 			this.NoteRichTextBox.TabIndex = 10;
 			this.NoteRichTextBox.Text = "";
 			// 
 			// CancelButton
 			// 
-			this.CancelButton.Location = new System.Drawing.Point(514, 498);
+			this.CancelButton.Location = new System.Drawing.Point(514, 622);
+			this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.CancelButton.Name = "CancelButton";
-			this.CancelButton.Size = new System.Drawing.Size(85, 28);
+			this.CancelButton.Size = new System.Drawing.Size(85, 35);
 			this.CancelButton.TabIndex = 11;
 			this.CancelButton.Text = "Cancel";
 			this.CancelButton.UseVisualStyleBackColor = true;
@@ -128,19 +134,20 @@
 			// 
 			// OKButton
 			// 
-			this.OKButton.Location = new System.Drawing.Point(423, 498);
+			this.OKButton.Location = new System.Drawing.Point(423, 622);
+			this.OKButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.OKButton.Name = "OKButton";
-			this.OKButton.Size = new System.Drawing.Size(85, 28);
+			this.OKButton.Size = new System.Drawing.Size(85, 35);
 			this.OKButton.TabIndex = 12;
 			this.OKButton.Text = "OK";
 			this.OKButton.UseVisualStyleBackColor = true;
 			this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
 			// 
-			// AddEditForm
+			// NoteForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(611, 535);
+			this.ClientSize = new System.Drawing.Size(611, 669);
 			this.Controls.Add(this.OKButton);
 			this.Controls.Add(this.CancelButton);
 			this.Controls.Add(this.NoteRichTextBox);
@@ -152,10 +159,11 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.TitleTextBox);
 			this.Controls.Add(this.label1);
-			this.Name = "AddEditForm";
+			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.Name = "NoteForm";
 			this.ShowIcon = false;
 			this.Text = "Add/Edit Note";
-			this.Load += new System.EventHandler(this.AddEditForm_Load);
+			this.Load += new System.EventHandler(this.NoteForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

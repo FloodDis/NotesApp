@@ -11,7 +11,7 @@ using NotesAppClasses;
 
 namespace NotesAppUI
 {
-	public partial class AddEditForm : Form
+	public partial class NoteForm : Form
 	{
 		/// <summary>
 		/// Текущая редактируемая заметка
@@ -48,7 +48,7 @@ namespace NotesAppUI
 			AddCategoryComboBox.SelectedItem = _noteToEdit.GetCategory();
 		}
 
-		public AddEditForm()
+		public NoteForm()
 		{
 			InitializeComponent();
 
@@ -89,7 +89,7 @@ namespace NotesAppUI
 			Close();
 		}
 
-		private void AddEditForm_Load(object sender, EventArgs e)
+		private void NoteForm_Load(object sender, EventArgs e)
 		{
 			foreach (Category category in Enum.GetValues(typeof(Category)))
 			{

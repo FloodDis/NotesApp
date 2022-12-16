@@ -79,10 +79,13 @@ namespace NotesAppUI
 			}
 		}
 
+		/// <summary>
+		/// Функция добавления заметки
+		/// </summary>
 		private void AddNote()
 		{
 			Note newNote = new Note();
-			AddEditForm noteEditForm = new AddEditForm();
+			NoteForm noteEditForm = new NoteForm();
 			noteEditForm.NoteToEdit = newNote;
 			DialogResult result = noteEditForm.ShowDialog();
 			if (result == DialogResult.OK)
@@ -105,13 +108,16 @@ namespace NotesAppUI
 			AddNote();
 		}
 
+		/// <summary>
+		/// Функция редактирования заметки
+		/// </summary>
 		private void EditNote()
 		{
 			int selectedNoteIndex = NoteListBox.SelectedIndex;
 			try
 			{
 				Note selectedNote = _displayedNotes.GetNoteByIndex(selectedNoteIndex);
-				AddEditForm noteEditForm = new AddEditForm();
+				NoteForm noteEditForm = new NoteForm();
 				noteEditForm.NoteToEdit = selectedNote;
 				DialogResult result = noteEditForm.ShowDialog();
 				if (result == DialogResult.OK)
