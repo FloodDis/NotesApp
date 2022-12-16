@@ -200,15 +200,6 @@ namespace NotesAppUI
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			//CategoryComboBox.Items.Add(Category.Default);
-			//CategoryComboBox.Items.Add(Category.Documents);
-			//CategoryComboBox.Items.Add(Category.Finances);
-			//CategoryComboBox.Items.Add(Category.HealthAndSport);
-			//CategoryComboBox.Items.Add(Category.Home);
-			//CategoryComboBox.Items.Add(Category.Other);
-			//CategoryComboBox.Items.Add(Category.People);
-			//CategoryComboBox.Items.Add(Category.Work);
-			//CategoryComboBox.SelectedItem = Category.Default;
 			foreach (Category category in Enum.GetValues(typeof(Category))) 
 			{
 				CategoryComboBox.Items.Add(category);
