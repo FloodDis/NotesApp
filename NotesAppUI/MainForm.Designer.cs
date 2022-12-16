@@ -1,6 +1,6 @@
 ﻿namespace NotesAppUI
 {
-	partial class NotesAppUIForm
+	partial class MainForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NotesAppUIForm));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.label1 = new System.Windows.Forms.Label();
 			this.CategoryComboBox = new System.Windows.Forms.ComboBox();
 			this.NoteTextRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -259,7 +259,7 @@
 			this.NoteTitleLabel.TabIndex = 15;
 			this.NoteTitleLabel.Text = "Note title";
 			// 
-			// NotesAppUIForm
+			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -281,10 +281,10 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.Name = "NotesAppUIForm";
+			this.Name = "MainForm";
 			this.Text = "NotesApp";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NotesAppUIForm_FormClosing);
-			this.Load += new System.EventHandler(this.NotesAppUIForm_Load);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);

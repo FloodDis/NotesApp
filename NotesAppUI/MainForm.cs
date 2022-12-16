@@ -12,7 +12,7 @@ using NotesAppClasses;
 
 namespace NotesAppUI
 {
-	public partial class NotesAppUIForm : Form
+	public partial class MainForm : Form
 	{
 		/// <summary>
 		/// Список заметок
@@ -24,7 +24,7 @@ namespace NotesAppUI
 		/// </summary>
 		private Project _displayedNotes;
 
-		public NotesAppUIForm()
+		public MainForm()
 		{
 			InitializeComponent();
 
@@ -42,18 +42,7 @@ namespace NotesAppUI
 			}
 		}
 
-		private void NotesAppUIForm_Load(object sender, EventArgs e)
-		{
-			CategoryComboBox.Items.Add(Category.Default);
-			CategoryComboBox.Items.Add(Category.Documents);
-			CategoryComboBox.Items.Add(Category.Finances);
-			CategoryComboBox.Items.Add(Category.HealthAndSport);
-			CategoryComboBox.Items.Add(Category.Home);
-			CategoryComboBox.Items.Add(Category.Other);
-			CategoryComboBox.Items.Add(Category.People);
-			CategoryComboBox.Items.Add(Category.Work);
-			CategoryComboBox.SelectedItem = Category.Default;
-		}
+		
 
 		/// <summary>
 		/// Открыть форму со справочной информацией
@@ -189,11 +178,6 @@ namespace NotesAppUI
 			}
 		}
 
-		private void NotesAppUIForm_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			ProjectManager.Save(_notesList);
-		}
-
 		private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Close();
@@ -212,6 +196,29 @@ namespace NotesAppUI
 		private void RemoveNoteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			RemoveButton_Click(sender, e);
+		}
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
+			//CategoryComboBox.Items.Add(Category.Default);
+			//CategoryComboBox.Items.Add(Category.Documents);
+			//CategoryComboBox.Items.Add(Category.Finances);
+			//CategoryComboBox.Items.Add(Category.HealthAndSport);
+			//CategoryComboBox.Items.Add(Category.Home);
+			//CategoryComboBox.Items.Add(Category.Other);
+			//CategoryComboBox.Items.Add(Category.People);
+			//CategoryComboBox.Items.Add(Category.Work);
+			//CategoryComboBox.SelectedItem = Category.Default;
+			foreach (Category category in Enum.GetValues(typeof(Category))) 
+			{
+				CategoryComboBox.Items.Add(category);
+			}
+			CategoryComboBox.SelectedItem = Category.Default;
+		}
+
+		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			ProjectManager.Save(_notesList);
 		}
 	}
 }

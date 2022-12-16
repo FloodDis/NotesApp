@@ -16,7 +16,7 @@ namespace NotesAppUI
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new NotesAppUIForm());
+			Application.Run(new MainForm());
 		}
 	}
 }
