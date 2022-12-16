@@ -89,17 +89,52 @@ namespace NotesAppClasses
 				{
 					_name = value;
 				}
+				_modificationTime = DateTime.Now;
 			}
 		}
 
+		/// <summary>
+		/// Свойство поля _category
+		/// </summary>
 		public Category Category 
 		{ 
 			get { return _category; }
 			set
 			{
 				_category = value;
+				_modificationTime = DateTime.Now;
 			}
 		}
+
+		/// <summary>
+		/// Свойство поля _text
+		/// </summary>
+		public string Text
+		{
+			get { return _text; }
+			set
+			{
+				if (value == "")
+				{
+					_text = _defaultNoteText;
+				}
+				else
+				{
+					_text = value;
+				}
+				_modificationTime = DateTime.Now;
+			}
+		}
+
+		public DateTime CreationTime
+		{
+			get { return _creationTime; }
+			set
+			{
+				_creationTime = value;
+			}
+		}
+
 
 		/// <summary>
 		/// Сеттер поля _category
