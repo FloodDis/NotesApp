@@ -126,12 +126,27 @@ namespace NotesAppClasses
 			}
 		}
 
+		/// <summary>
+		/// Свойство поля _creationTime
+		/// </summary>
 		public DateTime CreationTime
 		{
 			get { return _creationTime; }
 			set
 			{
 				_creationTime = value;
+			}
+		}
+
+		/// <summary>
+		/// Свойство поля _modificationTime
+		/// </summary>
+		public DateTime ModificationTime
+		{
+			get { return _modificationTime; }
+			set
+			{
+				_modificationTime = value;
 			}
 		}
 
