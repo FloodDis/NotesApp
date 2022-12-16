@@ -18,6 +18,21 @@ namespace NotesAppUI
 		/// </summary>
 		private Note _noteToEdit;
 
+		public Note NoteToEdit
+		{
+			get { return _noteToEdit; }
+			set
+			{
+				_noteToEdit = value;
+				TitleTextBox.Text = _noteToEdit.Name;
+				AddCategoryComboBox.Text = _noteToEdit.Category.ToString();
+				NoteRichTextBox.Text = _noteToEdit.Text;
+				CreationDateTimePicker.Value = _noteToEdit.CreationTime;
+				ModificationDateTimePicker.Value = _noteToEdit.ModificationTime;
+				AddCategoryComboBox.SelectedItem = _noteToEdit.Category;
+			}
+		}
+
 		/// <summary>
 		/// Сеттер заметки для редактирования
 		/// </summary>
