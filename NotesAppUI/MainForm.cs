@@ -93,7 +93,6 @@ namespace NotesAppUI
 			{
 				_notesList.AddNote(newNote);
 				_notesList.SortNotesByDate();
-				//var sortedNotes= _notesList.
 				ShowNote(newNote);
 				UpdateNoteListBox();
 			}

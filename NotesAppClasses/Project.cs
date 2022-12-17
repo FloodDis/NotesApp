@@ -23,7 +23,7 @@ namespace NotesAppClasses
 		private List<Note> _notes;
 
 		/// <summary>
-		/// Свойство получения списка заметок
+		/// Свойство списка заметок
 		/// </summary>
 		public List<Note> Notes
 		{
@@ -31,32 +31,29 @@ namespace NotesAppClasses
 		}
 
 		/// <summary>
-		/// Получить текущее кол-во заметок
+		/// Свойство кол-ва заметок в списке
 		/// </summary>
-		/// <returns>Текущее кол-во заметок</returns>
-		public int GetNoteCount()
+		public int NotesCount
 		{
-			return _notes.Count;
+			get { return _notes.Count(); }
 		}
 
 		/// <summary>
-		/// Получить заметку по её индексу в массиве.
+		/// Получить заметку по индексу
 		/// </summary>
 		/// <param name="index">Индекс заметки</param>
-		/// <returns>Заметка по заданному индексу</returns>
-		public Note GetNoteByIndex(int index)
+		/// <returns>Заметка с введенным индексом</returns>
+		public Note this[int index]
 		{
-			return _notes[index];
-		}
-
-		/// <summary>
-		/// Добавить заметку по индексу
-		/// </summary>
-		/// <param name="index">Индекс добавляемой заметки</param>
-		/// <param name="note">Заметка</param>
-		public void SetNoteByIndex(int index, Note note)
-		{
-			_notes[index] = note;
+			get
+			{
+				return _notes[index];
+			}
+			set
+			{
+				_notes[index] = value;
+				SortNotesByDate();
+			}
 		}
 
 		/// <summary>
@@ -82,7 +79,7 @@ namespace NotesAppClasses
 		/// </summary>
 		public void SortNotesByDate()
 		{
-			for (int i = 0; i < GetNoteCount(); i++)
+			for (int i = 0; i < this.NotesCount; i++)
 			{
 				for (int j = i; j > 0; j--)
 				{
@@ -95,6 +92,9 @@ namespace NotesAppClasses
 					}
 				}
 			}
+			
+			//var sortedNotes = _notes.OrderBy(x => x.ModificationTime);
+			//_notes = sortedNotes.ToList();
 		}
 
 		/// <summary>
@@ -109,8 +109,8 @@ namespace NotesAppClasses
 			}
 
 			List<Note> result = new List<Note>();
-			
-			for (int i = 0; i < GetNoteCount(); i++)
+
+			for (int i = 0; i < this.NotesCount; i++)
 			{
 				if (_notes[i].GetCategory() == noteCategory)
 				{
