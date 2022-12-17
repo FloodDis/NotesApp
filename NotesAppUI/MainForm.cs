@@ -76,7 +76,7 @@ namespace NotesAppUI
 			NoteListBox.Items.Clear();
 			for (int i = 0; i < _displayedNotes.Count; ++i)
 			{
-				NoteListBox.Items.Add(_displayedNotes[i].GetName());
+				NoteListBox.Items.Add(_displayedNotes[i].Name);
 			}
 		}
 
