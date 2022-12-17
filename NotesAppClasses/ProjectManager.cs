@@ -25,22 +25,10 @@ namespace NotesAppClasses
 		/// </summary>
 		private static string _path = _defaultPath;
 
-		/// <summary>
-		/// Сеттер поля _path
-		/// </summary>
-		/// <param name="path">Путь файла, который нужно ввести</param>
-		public static void SetPath(string path)
+		public static string Path
 		{
-			_path = path;
-		}
-
-		/// <summary>
-		/// Геттер поля _path
-		/// </summary>
-		/// <returns>Путь файла, в котором сохраняются заметки</returns>
-		public static string GetPath()
-		{
-			return _path;
+			get { return _path; }
+			set { _path = value; }
 		}
 
 		/// <summary>
