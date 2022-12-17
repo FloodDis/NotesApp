@@ -7,125 +7,124 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NotesAppClasses
+namespace NotesAppClasses;
+
+/// <summary>
+/// Проект
+/// </summary>
+[Serializable]
+public class Project
 {
 	/// <summary>
-	/// Проект
+	/// Список всех заметок, созданных 
+	/// в приложении
 	/// </summary>
-	[Serializable]
-	public class Project
+	[JsonProperty]
+	private List<Note> _notes;
+
+	/// <summary>
+	/// Свойство списка заметок
+	/// </summary>
+	public List<Note> Notes
 	{
-		/// <summary>
-		/// Список всех заметок, созданных 
-		/// в приложении
-		/// </summary>
-		[JsonProperty]
-		private List<Note> _notes;
+		get { return _notes; }
+	}
 
-		/// <summary>
-		/// Свойство списка заметок
-		/// </summary>
-		public List<Note> Notes
+	/// <summary>
+	/// Свойство кол-ва заметок в списке
+	/// </summary>
+	public int NotesCount
+	{
+		get { return _notes.Count(); }
+	}
+
+	/// <summary>
+	/// Получить заметку по индексу
+	/// </summary>
+	/// <param name="index">Индекс заметки</param>
+	/// <returns>Заметка с введенным индексом</returns>
+	public Note this[int index]
+	{
+		get
 		{
-			get { return _notes; }
+			return _notes[index];
 		}
-
-		/// <summary>
-		/// Свойство кол-ва заметок в списке
-		/// </summary>
-		public int NotesCount
+		set
 		{
-			get { return _notes.Count(); }
+			_notes[index] = value;
+			SortNotesByDate();
 		}
+	}
 
-		/// <summary>
-		/// Получить заметку по индексу
-		/// </summary>
-		/// <param name="index">Индекс заметки</param>
-		/// <returns>Заметка с введенным индексом</returns>
-		public Note this[int index]
+	/// <summary>
+	/// Удалить заметку из списка
+	/// </summary>
+	/// <param name="index">Индекс удаляемой заметки</param>
+	public void RemoveNote(int index)
+	{
+		_notes.RemoveAt(index);
+	}
+
+	/// <summary>
+	/// Добавить заметку в список
+	/// </summary>
+	/// <param name="note">Добавляемая заметка</param>
+	public void AddNote(Note note)
+	{
+		_notes.Add(note);
+	}
+
+	/// <summary>
+	/// Отсортировать заметки по времени их последнего редактирования
+	/// </summary>
+	public void SortNotesByDate()
+	{
+		for (int i = 0; i < this.NotesCount; i++)
 		{
-			get
+			for (int j = i; j > 0; j--)
 			{
-				return _notes[index];
-			}
-			set
-			{
-				_notes[index] = value;
-				SortNotesByDate();
-			}
-		}
-
-		/// <summary>
-		/// Удалить заметку из списка
-		/// </summary>
-		/// <param name="index">Индекс удаляемой заметки</param>
-		public void RemoveNote(int index)
-		{
-			_notes.RemoveAt(index);
-		}
-
-		/// <summary>
-		/// Добавить заметку в список
-		/// </summary>
-		/// <param name="note">Добавляемая заметка</param>
-		public void AddNote(Note note)
-		{
-			_notes.Add(note);
-		}
-
-		/// <summary>
-		/// Отсортировать заметки по времени их последнего редактирования
-		/// </summary>
-		public void SortNotesByDate()
-		{
-			for (int i = 0; i < this.NotesCount; i++)
-			{
-				for (int j = i; j > 0; j--)
+				if (_notes[j].GetModificationTime()
+				> _notes[j - 1].GetModificationTime())
 				{
-					if (_notes[j].GetModificationTime()
-					> _notes[j - 1].GetModificationTime())
-					{
-						Note buffer = _notes[j - 1];
-						_notes[j - 1] = _notes[j];
-						_notes[j] = buffer;
-					}
+					Note buffer = _notes[j - 1];
+					_notes[j - 1] = _notes[j];
+					_notes[j] = buffer;
 				}
 			}
-			
-			//var sortedNotes = _notes.OrderBy(x => x.ModificationTime);
-			//_notes = sortedNotes.ToList();
 		}
+		
+		//var sortedNotes = _notes.OrderBy(x => x.ModificationTime);
+		//_notes = sortedNotes.ToList();
+	}
 
-		/// <summary>
-		/// Получить список заметок с заданной категорией
-		/// </summary>
-		/// <param name="noteCategory">Категория заметки</param>
-		public List<Note> GetNotesWithCategory(Category noteCategory)
+	/// <summary>
+	/// Получить список заметок с заданной категорией
+	/// </summary>
+	/// <param name="noteCategory">Категория заметки</param>
+	public List<Note> GetNotesWithCategory(Category noteCategory)
+	{
+		if (noteCategory == Category.Default)
 		{
-			if (noteCategory == Category.Default)
-			{
-				return _notes;
-			}
-
-			List<Note> result = new List<Note>();
-
-			for (int i = 0; i < this.NotesCount; i++)
-			{
-				if (_notes[i].GetCategory() == noteCategory)
-				{
-					result.Add(_notes[i]);
-				}
-			}
-			return result;
+			return _notes;
 		}
 
-		/// <summary>
-		/// Конструктор по умолчанию
-		/// </summary>
-		public Project()
+		List<Note> result = new List<Note>();
+
+		for (int i = 0; i < this.NotesCount; i++)
 		{
-			_notes = new List<Note>();
+			if (_notes[i].GetCategory() == noteCategory)
+			{
+				result.Add(_notes[i]);
+			}
 		}
+		return result;
+	}
+
+	/// <summary>
+	/// Конструктор по умолчанию
+	/// </summary>
+	public Project()
+	{
+		_notes = new List<Note>();
 	}
 }

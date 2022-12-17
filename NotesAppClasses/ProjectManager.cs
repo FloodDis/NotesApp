@@ -8,72 +8,71 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace NotesAppClasses
+namespace NotesAppClasses;
+
+/// <summary>
+/// Менеджер проекта
+/// </summary>
+static public class ProjectManager
 {
 	/// <summary>
-	/// Менеджер проекта
+	/// Путь по умолчанию для сохранения и загрузки
 	/// </summary>
-	static public class ProjectManager
+	private static string _defaultPath = @".\Notes.txt";
+
+	/// <summary>
+	/// Заданный пользователем путь для сохранения и загрузки
+	/// </summary>
+	private static string _path = _defaultPath;
+
+	public static string Path
 	{
-		/// <summary>
-		/// Путь по умолчанию для сохранения и загрузки
-		/// </summary>
-		private static string _defaultPath = @".\Notes.txt";
+		get { return _path; }
+		set { _path = value; }
+	}
 
-		/// <summary>
-		/// Заданный пользователем путь для сохранения и загрузки
-		/// </summary>
-		private static string _path = _defaultPath;
-
-		public static string Path
+	/// <summary>
+	/// Сохранить список заметок
+	/// </summary>
+	/// <param name="project">Список заметок для сохранения</param>
+	public static void Save(Project project)
+	{
+		JsonSerializer serializer = new JsonSerializer();
+		if (!File.Exists(_path))
 		{
-			get { return _path; }
-			set { _path = value; }
+			File.Create(_path).Close();
+		}
+		
+		using (StreamWriter sw = new StreamWriter(_path))
+		using (JsonWriter writer = new JsonTextWriter(sw))
+		{
+			serializer.Serialize(writer, project);
+		}
+	}
+
+	/// <summary>
+	/// Загрузить список заметок
+	/// </summary>
+	/// <returns>Загруженный список заметок</returns>
+	public static Project Load()
+	{
+		Project project = new Project();
+		JsonSerializer serializer = new JsonSerializer();
+		if (!File.Exists(_path))
+		{
+			return new Project();
+		}
+		
+		using (StreamReader sr = new StreamReader(_path))
+		using (JsonReader reader = new JsonTextReader(sr))
+		{
+			project = serializer.Deserialize<Project>(reader);
 		}
 
-		/// <summary>
-		/// Сохранить список заметок
-		/// </summary>
-		/// <param name="project">Список заметок для сохранения</param>
-		public static void Save(Project project)
+		if (project == null)
 		{
-			JsonSerializer serializer = new JsonSerializer();
-			if (!File.Exists(_path))
-			{
-				File.Create(_path).Close();
-			}
-			
-			using (StreamWriter sw = new StreamWriter(_path))
-			using (JsonWriter writer = new JsonTextWriter(sw))
-			{
-				serializer.Serialize(writer, project);
-			}
+			return new Project();
 		}
-
-		/// <summary>
-		/// Загрузить список заметок
-		/// </summary>
-		/// <returns>Загруженный список заметок</returns>
-		public static Project Load()
-		{
-			Project project = new Project();
-			JsonSerializer serializer = new JsonSerializer();
-			if (!File.Exists(_path))
-			{
-				return new Project();
-			}
-			
-			using (StreamReader sr = new StreamReader(_path))
-			using (JsonReader reader = new JsonTextReader(sr))
-			{
-				project = serializer.Deserialize<Project>(reader);
-			}
-
-			if (project == null)
-			{
-				return new Project();
-			}
-			return project;
-		}
+		return project;
 	}
 }
