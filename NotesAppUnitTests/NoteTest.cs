@@ -10,8 +10,8 @@ public class NoteTest
 		var expected = "New note";
 
 		var note = new Note();
-		note.SetName(expected);
-		var actual = note.GetName();
+		note.Name = expected;
+		var actual = note.Name;
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -22,8 +22,8 @@ public class NoteTest
 		var expected = "Untitled Note";
 
 		var note = new Note();
-		note.SetName("");
-		var actual = note.GetName();
+		note.Name = "";
+		var actual = note.Name;
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -34,8 +34,8 @@ public class NoteTest
 		var expected = Category.People;
 
 		var note = new Note();
-		note.SetCategory(expected);
-		var actual = note.GetCategory();
+		note.Category = expected;
+		var actual = note.Category;
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -46,8 +46,8 @@ public class NoteTest
 		var expected = "Note text";
 
 		var note = new Note();
-		note.SetText(expected);
-		var actual = note.GetText();
+		note.Text = expected;
+		var actual = note.Text;
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -58,8 +58,8 @@ public class NoteTest
 		var expected = "Text of your note";
 
 		var note = new Note();
-		note.SetText("");
-		var actual = note.GetText();
+		note.Text = "";
+		var actual = note.Text;
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -70,8 +70,8 @@ public class NoteTest
 		var expected = DateTime.Now;
 
 		var note = new Note();
-		note.SetCreationTime(expected);
-		var actual = note.GetCreationTime();
+		note.CreationTime = expected;
+		var actual = note.CreationTime;
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -82,8 +82,8 @@ public class NoteTest
 		var expected = DateTime.Now;
 
 		var note = new Note("", "", Category.Default);
-		note.SetModificationTime(expected);
-		var actual = note.GetModificationTime();
+		note.ModificationTime = expected;
+		var actual = note.ModificationTime;
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -96,9 +96,9 @@ public class NoteTest
 		var expectedCategory = Category.Home;
 
 		var note = new Note(expectedName, expectedText, expectedCategory);
-		var actualName = note.GetName();
-		var actualText = note.GetText();
-		var actualCategory = note.GetCategory();
+		var actualName = note.Name;
+		var actualText = note.Text;
+		var actualCategory = note.Category;
 
 		Assert.AreEqual(expectedName, actualName);
 		Assert.AreEqual(expectedText, actualText);
@@ -106,16 +106,16 @@ public class NoteTest
 	}
 
 	[Test(Description = "Тест конструктора Note по умолчанию")]
-	public void TestDefaultNoteConstructor() 
+	public void TestDefaultNoteConstructor()
 	{
 		var expectedName = "Untitled Note";
 		var expectedText = "Text of your note";
 		var expectedCategory = Category.Default;
 
 		var note = new Note();
-		var actualName = note.GetName();
-		var actualText = note.GetText();
-		var actualCategory = note.GetCategory();
+		var actualName = note.Name;
+		var actualText = note.Text;
+		var actualCategory = note.Category;
 
 		Assert.AreEqual(expectedName, actualName);
 		Assert.AreEqual(expectedText, actualText);
