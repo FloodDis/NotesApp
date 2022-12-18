@@ -16,16 +16,16 @@ public class ProjectManagerTest
 
 		expected.AddNote(new Note("First note", "Text", Category.Documents));
 		expected.AddNote(new Note("Second note", "Text", Category.People));
-		ProjectManager.SetPath(@".\NotesApp.txt");
+		ProjectManager.Path = @".\NotesApp.txt";
 		ProjectManager.Save(expected);
 		var actual = ProjectManager.Load();
 
 
 		Assert.AreEqual(expected.ToString(), actual.ToString());
 
-		if (File.Exists(ProjectManager.GetPath()))
+		if (File.Exists(ProjectManager.Path))
 		{
-			File.Delete(ProjectManager.GetPath());
+			File.Delete(ProjectManager.Path);
 		}
 	}
 
@@ -34,8 +34,8 @@ public class ProjectManagerTest
 	{
 		var expected = @"..\Notes.txt";
 
-		ProjectManager.SetPath(expected);
-		var actual = ProjectManager.GetPath();
+		ProjectManager.Path = expected;
+		var actual = ProjectManager.Path;
 
 		Assert.AreEqual(expected, actual);
 	}
