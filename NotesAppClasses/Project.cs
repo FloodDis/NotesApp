@@ -91,7 +91,9 @@ public class Project
 				}
 			}
 		}
-		
+
+		//_notes.Sort((t1, t2) => DateTime.Compare(t2.ModificationTime, t1.ModificationTime));
+
 		//var sortedNotes = _notes.OrderBy(x => x.ModificationTime);
 		//_notes = sortedNotes.ToList();
 	}
