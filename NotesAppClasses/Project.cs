@@ -82,8 +82,8 @@ public class Project
 		{
 			for (int j = i; j > 0; j--)
 			{
-				if (_notes[j].GetModificationTime()
-				> _notes[j - 1].GetModificationTime())
+				if (_notes[j].ModificationTime
+				> _notes[j - 1].ModificationTime)
 				{
 					Note buffer = _notes[j - 1];
 					_notes[j - 1] = _notes[j];
@@ -111,7 +111,7 @@ public class Project
 
 		for (int i = 0; i < this.NotesCount; i++)
 		{
-			if (_notes[i].GetCategory() == noteCategory)
+			if (_notes[i].Category == noteCategory)
 			{
 				result.Add(_notes[i]);
 			}

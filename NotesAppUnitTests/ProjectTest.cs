@@ -16,7 +16,7 @@ public class ProjectTest
 		var expected = 0;
 
 		var project = new Project();
-		var actual = project.GetNoteCount();
+		var actual = project.NotesCount;
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -28,7 +28,7 @@ public class ProjectTest
 
 		var project = new Project();
 		project.AddNote(expected);
-		var actual = project.GetNoteByIndex(0);
+		var actual = project[0];
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -42,8 +42,8 @@ public class ProjectTest
 		project.AddNote(new Note("Note", "Text", Category.Home));
 		project.AddNote(new Note("Note", "Text", Category.Home));
 		project.AddNote(new Note("Note", "Text", Category.Home));
-		project.SetNoteByIndex(1, expected);
-		var actual = project.GetNoteByIndex(1);
+		project[1] = expected;
+		var actual = project[1];
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -58,7 +58,7 @@ public class ProjectTest
 		project.AddNote(new Note("Second note", "Text", Category.People));
 		project.AddNote(expected);
 		project.RemoveNote(1);
-		var actual = project.GetNoteByIndex(1);
+		var actual = project[1];
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -72,9 +72,9 @@ public class ProjectTest
 		project.AddNote(new Note("First note", "Text", Category.People));
 		project.AddNote(new Note("Second note", "Text", Category.People));
 		project.AddNote(expected);
-		project.GetNoteByIndex(2).SetText("Edited text");
+		project[2].Text = "Edited text";
 		project.SortNotesByDate();
-		var actual = project.GetNoteByIndex(0);
+		var actual = project[0];
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -86,7 +86,7 @@ public class ProjectTest
 
 		var project = new Project();
 		project.AddNote(expected);
-		var actual = project.GetNotesWithCategory(Category.Default).GetNoteByIndex(0);
+		var actual = project.GetNotesWithCategory(Category.Default)[0];
 
 		Assert.AreEqual(expected, actual);
 	}
@@ -99,7 +99,7 @@ public class ProjectTest
 		var project = new Project();
 		project.AddNote(expected);
 		project.AddNote(new Note("Second note", "Text", Category.People));
-		var actual = project.GetNotesWithCategory(Category.Home).GetNoteByIndex(0);
+		var actual = project.GetNotesWithCategory(Category.Home)[0];
 
 		Assert.AreEqual(expected, actual);
 	}
