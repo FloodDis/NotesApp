@@ -34,7 +34,7 @@ public class Project
 	/// </summary>
 	public int NotesCount
 	{
-		get { return _notes.Count(); }
+		get { return _notes.Count; }
 	}
 
 	/// <summary>
