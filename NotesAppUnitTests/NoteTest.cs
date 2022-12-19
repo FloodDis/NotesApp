@@ -4,7 +4,7 @@ namespace NotesApp.UnitTests;
 [TestFixture]
 public class NoteTest
 {
-	[Test(Description = "Тест сеттера и геттера _name в случае присвоения непустой строки")]
+	[Test(Description = "Тест свойства поля _name в случае присвоения непустой строки")]
 	public void TestNameSetGet_NotEmptyName()
 	{
 		var expected = "New note";
@@ -16,7 +16,7 @@ public class NoteTest
 		Assert.AreEqual(expected, actual);
 	}
 
-	[Test(Description = "Тест сеттера и геттера _name в случае присвоения пустой строки")]
+	[Test(Description = "Тест свойства поля _name в случае присвоения пустой строки")]
 	public void TestNameSetGet_EmptyName()
 	{
 		var expected = "Untitled Note";
@@ -28,7 +28,7 @@ public class NoteTest
 		Assert.AreEqual(expected, actual);
 	}
 
-	[Test(Description = "Тест сеттера и геттера _category")]
+	[Test(Description = "Тест свойства поля _category")]
 	public void TestCategorySetGet()
 	{
 		var expected = Category.People;
@@ -40,7 +40,7 @@ public class NoteTest
 		Assert.AreEqual(expected, actual);
 	}
 
-	[Test(Description = "Тест сеттера и геттера _text в случае присвоения непустой строки")]
+	[Test(Description = "Тест свойства поля _text в случае присвоения непустой строки")]
 	public void TestTextSetGet_NotEmptyText()
 	{
 		var expected = "Note text";
@@ -52,7 +52,7 @@ public class NoteTest
 		Assert.AreEqual(expected, actual);
 	}
 
-	[Test(Description = "Тест сеттера и геттера _text в случае присвоения пустой строки")]
+	[Test(Description = "Тест свойства поля _text в случае присвоения пустой строки")]
 	public void TestTextSetGet_EmptyText()
 	{
 		var expected = "Text of your note";
@@ -64,7 +64,7 @@ public class NoteTest
 		Assert.AreEqual(expected, actual);
 	}
 
-	[Test(Description = "Тест сеттера и геттера _creationTime")]
+	[Test(Description = "Тест свойства поля _creationTime")]
 	public void TestCreationTimeSetGet()
 	{
 		var expected = DateTime.Now;
@@ -76,7 +76,7 @@ public class NoteTest
 		Assert.AreEqual(expected, actual);
 	}
 
-	[Test(Description = "Тест сеттера и геттера _modificationTime")]
+	[Test(Description = "Тест свойства поля _modificationTime")]
 	public void TestModificationTime()
 	{
 		var expected = DateTime.Now;
