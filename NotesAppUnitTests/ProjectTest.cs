@@ -9,7 +9,7 @@ namespace NotesApp.UnitTests;
 [TestFixture]
 public class ProjectTest
 {
-	[Test(Description = "Тест геттера кол-ва заметок в списке")]
+	[Test(Description = "Тест свойства кол-ва заметок в списке")]
 	public void TestNotesCountsGet()
 	{
 		var expected = 0;
