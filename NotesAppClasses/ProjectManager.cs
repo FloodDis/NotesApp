@@ -47,6 +47,8 @@ static public class ProjectManager
 		{
 			serializer.Serialize(writer, project);
 		}
+		//string serializedProject=JsonConvert.SerializeObject(project, Formatting.Indented);
+		//File.WriteAllText(_path, serializedProject);
 	}
 
 	/// <summary>
@@ -61,12 +63,15 @@ static public class ProjectManager
 		{
 			return new Project();
 		}
-		
+
 		using (StreamReader sr = new StreamReader(_path))
 		using (JsonReader reader = new JsonTextReader(sr))
 		{
 			project = serializer.Deserialize<Project>(reader);
 		}
+
+		//string fileText = File.ReadAllText(_path);
+		//project = JsonConvert.DeserializeObject<Project>(fileText);
 
 		if (project == null)
 		{

@@ -22,14 +22,6 @@ public class Project
 	private List<Note> _notes;
 
 	/// <summary>
-	/// Свойство списка заметок
-	/// </summary>
-	public List<Note> Notes
-	{
-		get { return _notes; }
-	}
-
-	/// <summary>
 	/// Свойство кол-ва заметок в списке
 	/// </summary>
 	public int NotesCount
@@ -78,24 +70,8 @@ public class Project
 	/// </summary>
 	public void SortNotesByDate()
 	{
-		for (int i = 0; i < this.NotesCount; i++)
-		{
-			for (int j = i; j > 0; j--)
-			{
-				if (_notes[j].ModificationTime
-				> _notes[j - 1].ModificationTime)
-				{
-					Note buffer = _notes[j - 1];
-					_notes[j - 1] = _notes[j];
-					_notes[j] = buffer;
-				}
-			}
-		}
-
-		//_notes.Sort((t1, t2) => DateTime.Compare(t2.ModificationTime, t1.ModificationTime));
-
-		//var sortedNotes = _notes.OrderBy(x => x.ModificationTime);
-		//_notes = sortedNotes.ToList();
+		var sortedNotes = _notes.OrderByDescending(x => x.ModificationTime);
+		_notes = sortedNotes.ToList();
 	}
 
 	/// <summary>

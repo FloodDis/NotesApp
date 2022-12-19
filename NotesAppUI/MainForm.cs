@@ -28,7 +28,7 @@ public partial class MainForm : Form
 		InitializeComponent();
 
 		_notesList = new Project();
-		_displayedNotes = _notesList.Notes;
+		_displayedNotes = new List<Note>();
 
 		try
 		{
@@ -70,7 +70,9 @@ public partial class MainForm : Form
 	/// </summary>
 	private void UpdateNoteListBox()
 	{
-		_displayedNotes = _notesList.GetNotesWithCategory((Category)CategoryComboBox.SelectedItem);
+		List<Note> notes= _notesList.GetNotesWithCategory((Category)CategoryComboBox.SelectedItem);
+		_displayedNotes.Clear();
+		_displayedNotes.AddRange(notes);
 		NoteListBox.Items.Clear();
 		for (int i = 0; i < _displayedNotes.Count; ++i)
 		{
@@ -91,10 +93,11 @@ public partial class MainForm : Form
 		{
 			_notesList.AddNote(newNote);
 			_notesList.SortNotesByDate();
+			ProjectManager.Save(_notesList);
 			ShowNote(newNote);
 			UpdateNoteListBox();
 		}
-		ProjectManager.Save(_notesList);
+		
 	}
 
 	/// <summary>
