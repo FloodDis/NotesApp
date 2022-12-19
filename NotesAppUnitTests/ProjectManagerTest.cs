@@ -29,7 +29,7 @@ public class ProjectManagerTest
 		}
 	}
 
-	[Test(Description = "Тест геттера и сеттера _path")]
+	[Test(Description = "Тест свойства поля _path")]
 	public void TestGetSetPath()
 	{
 		var expected = @"..\Notes.txt";
