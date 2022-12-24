@@ -36,8 +36,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="md C:\Users\vlads\OneDrive\Desktop\Study\Inf\NotesApp\NotesAppUI\InstallScripts" />
-  </Target>
-
 </Project>
