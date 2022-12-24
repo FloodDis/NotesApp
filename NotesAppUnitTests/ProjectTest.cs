@@ -44,7 +44,7 @@ public class ProjectTest
 		project[1] = expected;
 		var actual = project[1];
 
-		Assert.AreEqual(expected, actual);
+		Assert.AreEqual(expected.ToString(), actual.ToString());
 	}
 
 	[Test(Description = "Тест функции удаления заметки")]

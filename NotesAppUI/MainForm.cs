@@ -70,7 +70,7 @@ public partial class MainForm : Form
 	/// </summary>
 	private void UpdateNoteListBox()
 	{
-		List<Note> notes= _notesList.GetNotesWithCategory((Category)CategoryComboBox.SelectedItem);
+		List<Note> notes = _notesList.GetNotesWithCategory((Category)CategoryComboBox.SelectedItem);
 		_displayedNotes.Clear();
 		_displayedNotes.AddRange(notes);
 		NoteListBox.Items.Clear();
@@ -97,7 +97,6 @@ public partial class MainForm : Form
 			ShowNote(newNote);
 			UpdateNoteListBox();
 		}
-		
 	}
 
 	/// <summary>
