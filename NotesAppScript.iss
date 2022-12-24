@@ -45,6 +45,7 @@ Source: "NotesAppUI\bin\Release\net6.0-windows\{#MyAppExeName}"; DestDir: "{app}
 Source: "NotesAppUI\bin\Release\net6.0-windows\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "NotesAppUI\bin\Release\net6.0-windows\NotesAppClasses.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "NotesAppUI\bin\Release\net6.0-windows\NotesAppUI.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "NotesAppUI\bin\Release\net6.0-windows\NotesAppUI.runtimeconfig.json"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

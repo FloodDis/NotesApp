@@ -17,7 +17,7 @@ static public class ProjectManager
 	/// <summary>
 	/// Путь по умолчанию для сохранения и загрузки
 	/// </summary>
-	private static string _defaultPath = @".\Notes.txt";
+	private static string _defaultPath = Environment.ExpandEnvironmentVariables(@".\Notes.txt"); 
 
 	/// <summary>
 	/// Заданный пользователем путь для сохранения и загрузки
@@ -47,8 +47,6 @@ static public class ProjectManager
 		{
 			serializer.Serialize(writer, project);
 		}
-		//string serializedProject=JsonConvert.SerializeObject(project, Formatting.Indented);
-		//File.WriteAllText(_path, serializedProject);
 	}
 
 	/// <summary>
@@ -69,9 +67,6 @@ static public class ProjectManager
 		{
 			project = serializer.Deserialize<Project>(reader);
 		}
-
-		//string fileText = File.ReadAllText(_path);
-		//project = JsonConvert.DeserializeObject<Project>(fileText);
 
 		if (project == null)
 		{
