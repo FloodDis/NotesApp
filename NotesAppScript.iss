@@ -27,7 +27,7 @@ DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\vlads\OneDrive\Desktop\Study\Inf\NotesApp\NotesAppUI
+OutputDir=NotesAppUI
 OutputBaseFilename=NoteAppSetup
 Compression=lzma
 SolidCompression=yes
@@ -41,10 +41,10 @@ Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\vlads\OneDrive\Рабочий стол\Study\Inf\NotesApp\NotesAppUI\bin\Release\net6.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\vlads\OneDrive\Рабочий стол\Study\Inf\NotesApp\NotesAppUI\bin\Release\net6.0-windows\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\vlads\OneDrive\Рабочий стол\Study\Inf\NotesApp\NotesAppUI\bin\Release\net6.0-windows\NotesAppClasses.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\vlads\OneDrive\Рабочий стол\Study\Inf\NotesApp\NotesAppUI\bin\Release\net6.0-windows\NotesAppUI.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "NotesAppUI\bin\Release\net6.0-windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "NotesAppUI\bin\Release\net6.0-windows\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "NotesAppUI\bin\Release\net6.0-windows\NotesAppClasses.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "NotesAppUI\bin\Release\net6.0-windows\NotesAppUI.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
